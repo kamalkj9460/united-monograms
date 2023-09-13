@@ -1,0 +1,66 @@
+<div id="id01" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+            <div class="w3-center">
+                <span onclick="document.getElementById('id01').style.display='none'" id="btnClose" class="w3-button w3-large w3-hover-Sand w3-display-topright" title="Close Modal">&times;</span>
+
+            </div>
+
+            <div class="w3-row w3-border w3-topbar w3-bottombar w3-leftbar w3-rightbar">
+                           
+ 
+                <div id="monogramimage"  class="w3-half w3-container  w3-Sand   w3-center ">
+                
+                </div>   
+                   <div class="w3-half w3-container   w3-cell w3-light">
+                     
+                    <p class="line-item-property__field">
+                    </p>
+                    <p class="line-item-property__field">
+                    </p>
+                    <p class="line-item-property__field">
+
+                           <label class="ep_block  ">Letter Patch Initials (up to 2):<span class="validity"></span></label>
+                          <input class="w3-input w3-border  w3-round w3-margin-bottom" form="{{ form_id}}" id="MonogramText" type="text" maxlength="2"  placeholder="AB"  name="properties[Letter Patch Initials (up to 2)]" required>
+                      
+                            
+                    </p>
+
+                      <div id="validatorId">  </div>
+                      <label class="ep_block  " style="display: none;">Letter Patch Style :
+							<div id="debug">  </div>
+                          <div id="hiddenMonogramImage">  </div>
+                          <div id="PayLinkMonogramImage">  </div>                          
+                          <div id="showMonogramImage">  </div>
+                        </label>
+
+                        <select required id="MonogramFont" form="{{ form_id}}" style="display: none;"  class="w3-select w3-border" name="properties[Letter Patch Style]">
+                            <option value="Patchapp" data-valname="Patchapp2" data-option_value_key="0"> Patchapp</option>
+ 
+                        </select>
+                    </p>
+                    <p class="line-item-property__field">
+                        <label class="ep_block  ">Patch Color:</label>
+
+                         <select required id="threadcolor" form="{{ form_id}}" class="w3-select w3-border" name="properties[Patch Color]">
+                            <option value="White" data-valcolor="Affffff" data-option_value_key="24">White</option>
+                            <option value="Pink" data-valcolor="AD08AB3" data-option_value_key="19">Pink</option>
+                           <option value="Purple" data-valcolor="A6b33a5" data-option_value_key="0">Purple</option>
+                            <option value="Blue" data-valcolor="A2124c1" data-option_value_key="1">Blue</option>
+                            <option value="Black" data-valcolor="A000000" data-option_value_key="25">Black</option>
+                             <option value="Hot Pink" data-valcolor="A000000" data-option_value_key="25">Hot Pink</option>
+                           <option value="Yellow" data-valcolor="A000000" data-option_value_key="25">Yellow</option>
+                              <option value="Royal Blue" data-valcolor="A000000" data-option_value_key="25">Royal Blue</option>
+   <option value="Orange" data-valcolor="A000000" data-option_value_key="25">Orange</option>
+   <option value="Red" data-valcolor="A000000" data-option_value_key="25">Red</option>
+   <option value="Red with Royal Outline" data-valcolor="A000000" data-option_value_key="25">Red with Royal Outline</option>
+                      </select>
+                    </p>
+                <p class="line-item-property__field">
+
+                    {%- include 'MonoAddtoCart' -%}
+
+            </div>
+        </div>
+    </div>
+</div>
+<button type="button" id="preview-monogram" onclick="document.getElementById('id01').style.display='block'" class="button button--primary">Make it Yours</button>

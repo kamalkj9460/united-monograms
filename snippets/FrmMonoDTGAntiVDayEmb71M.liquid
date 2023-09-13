@@ -1,0 +1,168 @@
+<div id="id01" class="w3-modal">
+   
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+     <div class="w3-center">
+        <span onclick="document.getElementById('id01').style.display='none'" id="btnClose" class="w3-button w3-large w3-hover-Sand w3-display-topright" title="Close Modal">&times;</span>
+     </div>
+
+  <div class="w3-bar w3-border-bottom " > 
+    <button id="btnTabDTG"  type="button" class="tablink w3-bar-item w3-button"   onclick="openCity(event, 'DTGMonogram')">Monogram 1</button> 
+  </div>
+
+
+ <div id="DTGMonogram" class="w3-container city">
+  <p>
+
+            <div id="DTGmonogramimage"  class="w3-half w3-container  w3-Sand   w3-center "> </div>
+        <div class="w3-half w3-container   w3-cell w3-light">
+           <p class="line-item-property__field"></p>
+           <p class="line-item-property__field"></p>
+           <p class="line-item-property__field">
+               <p class="line-item-property__field">
+                  <label class="ep_block  ">Monogram (first, LAST NAME, middle)<span class="validity"></span></label>
+                  <input class="w3-input w3-border  w3-round w3-margin-bottom" form="{{ form_id}}" id="MonogramText_DTG" type="text" maxlength="3"  placeholder="ABC"  name="properties[Monogram_DTG (first, LAST NAME, middle)]" required>
+               </p>
+               <p class="line-item-property__field">
+                    <label class="ep_block" style="display: none;">Color:</label>
+                    <select required id="threadcolor_DTG" form="{{ form_id}}" style="display: none;" class="w3-select w3-border" name="properties[Color_DTG]">
+                         <option value="White" data-valcolor="Affffff" data-option_value_key="0">White</option>
+                    </select>
+               </p>
+           
+               <div id="validatorId_DTG">  </div>
+               <label class="ep_block  "  >
+                  Monogram Style:
+                  <div id="debug">  </div>
+                  <div id="hiddenMonogramImage_DTG">  </div>
+                  <div id="PayLinkMonogramImage_DTG">  </div>
+                  <div id="showMonogramImage_DTG">  </div>
+               </label>
+               <select required id="MonogramFont_DTG" form="{{ form_id}}"  class="w3-select w3-border" name="properties[Monogram Style_DTG]">
+                        <option value="Circle" data-valname="DTGBroomCir" data-option_value_key="0">Circle</option>
+                         <option value="2 Letter Circle"   data-valname="DTG2Broom" data-option_value_key="2">2 Letter Circle</option>
+               </select>
+          <br> <br>
+ 
+              <div class="w3-container w3-center">
+                  <button  type="button" id="NextEmb" class="button tablink button--primary w3-center"  onclick="openCity(event, 'EMBMonogram');">Next</button>
+             </div>
+         </p> 
+        </div>
+    
+  </p>
+ </div>
+
+ <div id="EMBMonogram" class="w3-container city">
+  <p>
+        <div id="monogramimage"  class="w3-half w3-container  w3-Sand   w3-center "> </div>
+        <div class="w3-half w3-container   w3-cell w3-light">
+           <p class="line-item-property__field"></p>
+           <p class="line-item-property__field"> </p>
+           <p class="line-item-property__field">
+        <!----       <p class="line-item-property__field" style="display: none;">
+                  <label class="ep_block  " style="display: none;">Monogram (first, LAST NAME, middle)<span class="validity"></span></label>
+                  <input class="w3-input w3-border  w3-round w3-margin-bottom" style="display: none;" id="MonogramText" type="text" maxlength="3"  placeholder="ABC"  name="properties[Monogram (first, LAST NAME, middle)]" required>
+               </p>---->
+               <p class="line-item-property__field">
+                  <label class="ep_block">Color:</label>
+                  <select required id="threadcolor" form="{{ form_id}}"  class="w3-select w3-border" name="properties[Color]">
+                     <option value="Black" data-valcolor="A000000" data-option_value_key="0">Black</option>  
+                           <option value="Army Green" data-valcolor="A908f68" data-option_value_key="1">Army Green</option> 
+                           <option value="Burgundy" data-valcolor="A781818" data-option_value_key="2">Burgundy</option>
+                           <option value="Bright Fuchsia" data-valcolor="Af248a8" data-option_value_key="3">Bright Fuchsia</option>
+                           <option value="Coral" data-valcolor="Affa2b8" data-option_value_key="4">Coral</option>
+                           <option value="Cream" data-valcolor="Afffdf2" data-option_value_key="5">Cream</option>
+                           <option value="Dusty Blue" data-valcolor="A778c9f" data-option_value_key="6">Dusty Blue</option>
+                           <option value="Fire Orange" data-valcolor="Aff2a00" data-option_value_key="7">Fire Orange</option>
+                           <option value="Fuchsia" data-valcolor="Ae24593" data-option_value_key="8">Fuchsia</option>
+                           <option value="Gold" data-valcolor="Ae3cc94" data-option_value_key="9">Gold</option>
+                           <option value="Green" data-valcolor="A22812d" data-option_value_key="10">Green</option>
+                           <option value="Grey" data-valcolor="A838383" data-option_value_key="11">Grey</option>
+                           <option value="Khaki" data-valcolor="Abfa68e" data-option_value_key="12">Khaki</option>
+                           <option value="Peach" data-valcolor="Af7af9c" data-option_value_key="13">Peach</option>
+                           <option value="Deep Teal" data-valcolor="A215b5f" data-option_value_key="14">Deep Teal</option>
+                           <option value="Light Blue" data-valcolor="A80e1ea" data-option_value_key="15">Light Blue</option>
+                           <option value="Light Brown" data-valcolor="AA77D5B" data-option_value_key="16">Light Brown</option>
+                           <option value="Light Purple" data-valcolor="Ad39ef2" data-option_value_key="17">Light Purple</option>
+                           <option value="Light Teal" data-valcolor="A8ee9db" data-option_value_key="18">Light Teal</option>
+                           <option value="Light Yellow" data-valcolor="Affee91" data-option_value_key="19">Light Yellow</option>
+                           <option value="Mint" data-valcolor="A6dcb97" data-option_value_key="20">Mint</option>
+                           <option value="Moss Green" data-valcolor="A8c9970" data-option_value_key="21">Moss Green</option>
+                           <option value="Mauve" data-valcolor="Adda9ab" data-option_value_key="22">Mauve</option>
+                           <option value="Navy" data-valcolor="A222859" data-option_value_key="23">Navy</option>
+                           <option value="Neon Green" data-valcolor="Ac2ff4c" data-option_value_key="24">Neon Green</option>
+                           <option value="Neon Pink" data-valcolor="Aff92c9" data-option_value_key="25">Neon Pink</option>
+                           <option value="Neon Yellow" data-valcolor="Afffc0a" data-option_value_key="26">Neon Yellow</option>
+                           <option value="Orange" data-valcolor="Aff802b" data-option_value_key="27">Orange</option>
+                           <option value="Pale Pink" data-valcolor="Affdfed" data-option_value_key="28">Pale Pink</option>
+                           <option value="Periwinkle" data-valcolor="A8f97e1" data-option_value_key="29">Periwinkle</option>
+                           <option value="Pink" data-valcolor="Aff9dc8" data-option_value_key="30">Pink</option>
+                           <option value="Plum" data-valcolor="A683b5c" data-option_value_key="31">Plum</option>
+                           <option value="Purple" data-valcolor="A6c16a2" data-option_value_key="32">Purple</option>
+                           <option value="Red" data-valcolor="Add0b0b" data-option_value_key="33">Red</option> 
+                           <option value="Rose Pink" data-valcolor="Ada7ca7" data-option_value_key="34">Rose Pink</option>
+                           <option value="Royal Blue" data-valcolor="A2124c1" data-option_value_key="35">Royal Blue</option>
+                           <option value="Rust" data-valcolor="Abc5b23" data-option_value_key="36">Rust</option>
+                           <option value="Teal" data-valcolor="A23bdd4" data-option_value_key="37">Teal</option>
+                           <option value="Turquoise " data-valcolor="A40b4a5" data-option_value_key="38">Turquoise </option>
+                           <option value="Sunflower Yellow" data-valcolor="Aedcd1f" data-option_value_key="39">Sunflower Yellow</option>
+                           <option value="White" data-valcolor="Affffff" data-option_value_key="40">White</option>
+                           <option value="Yellow" data-valcolor="Affec4e" data-option_value_key="41">Yellow</option>
+                  </select>
+               </p>
+           
+               <div id="validatorId">  </div>
+               <label class="ep_block  ">
+                  Bottom Monogram Style:
+                  <div id="debug">  </div>
+                  <div id="hiddenMonogramImage">  </div>
+                  <div id="PayLinkMonogramImage">  </div>
+                  <div id="showMonogramImage">  </div>
+               </label>
+               <select required id="MonogramFont" form="{{ form_id}}"  class="w3-select w3-border" name="properties[Monogram Style]">
+
+                            <option value="Circle" data-valname="1-71M" data-option_value_key="0">Circle</option>
+                           <option value="MasterCircle" data-valname="2-71M" data-option_value_key="1">Master Circle</option>
+                            <option value="Vine" data-valname="3-71M" data-option_value_key="2">Vine</option>
+                           <option value="FishTail" data-valname="4-71M" data-option_value_key="3">FishTail</option>
+                           <option value="Diamond" data-valname="5-71M" data-option_value_key="4">Diamond</option>
+                           <option value="Block" data-valname="6-71M" data-option_value_key="5">Block</option>
+                           <option value="Stacked" data-valname="7-71M" data-option_value_key="6">Stacked</option>
+                           <option value="Engraved" data-valname="8-71M" data-option_value_key="7">Engraved</option>
+
+
+  
+               </select>
+           
+           <br> <br>
+        </p> 
+        <p class="line-item-property__field">
+
+            {%- include 'MonoAddtoCart' -%}
+
+    </div>
+</div>
+</div>
+</div>
+ <!---MonogramPreviewPaging This will handle the modal paging--->
+ <script>
+   document.getElementsByClassName("tablink")[0].click();
+   
+   function openCity(evt, cityName) {
+     var i, x, tablinks;
+     if (cityName == "EMBMonogram")   {
+        $('select[name="properties[Monogram Style]"]').trigger("change");
+     }
+     x = document.getElementsByClassName("city");
+     for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+     }
+     tablinks = document.getElementsByClassName("tablink");
+     for (i = 0; i < x.length; i++) {
+       tablinks[i].classList.remove("w3-light-grey");
+     }
+     document.getElementById(cityName).style.display = "block";
+     evt.currentTarget.classList.add("w3-light-grey");
+   }
+   </script>
+<button type="button" id="preview-monogram" onclick="document.getElementById('id01').style.display='block'" class="button button--primary">Add your Monogram</button>

@@ -1,0 +1,26 @@
+<div class="w3-containerw3-center ">
+    <div class="product__payment-container  "  align="center"> 
+
+      <!------- -adding the add to cart button------>
+      <button
+              {% if product.empty? %}type="button"{% else %}type="submit"{% endif %}
+              name="add"
+              data-add-to-cart
+              id="addtocart" 
+              form="{{ form_id}}"
+              {% comment %}
+                  onclick="document.getElementById('id01').style.display='none'" 
+              {% endcomment %}
+              class="btn btn--full add-to-cart{% if enable_dynamic_buttons and product.selling_plan_groups == empty %} btn--secondary{% endif %}"
+              {% unless current_variant.available %} disabled="disabled"{% endunless %}>
+        <span data-add-to-cart-text data-default-text="{{ default_text }}">
+          {{ button_text }}
+        </span>
+        {%- if section.settings.show_payment_button -%}
+            {{ form | payment_button }}
+        {%- endif -%}
+      </button>
+
+      <!------- -adding the add to cart button------>
+    </div>                      
+  </div>

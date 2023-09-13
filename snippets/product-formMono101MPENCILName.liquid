@@ -1,0 +1,284 @@
+{% form 'product', product, class: 'product__form' %}
+  <div class="product__variants">
+    {%- if product.variants.size > 1 -%}
+      {%- assign show_variants_selectors = true -%}
+    {% elsif product.has_only_default_variant == false and section.settings.hide_variants_if_only_one == false %}
+      {%- assign show_variants_selectors = true -%}
+    {%- else -%}
+      {%- assign show_variants_selectors = false -%}
+    {%- endif -%}
+
+    {%- if show_variants_selectors -%}
+      {%- for option in product.options_with_values -%}
+        <div class="form__control">
+          <label for="single-option-selector-{{ forloop.index0 }}" class="form__label">{{ option.name }}</label>
+
+          {%- assign color_label = 'color,colour,couleur,colore,farbe,색,色,färg,farve' -%}
+          {%- assign size_label = 'size,taille,bröße,tamanho,tamaño,koko,サイズ' -%}
+
+          {%- assign downcase_option = option.name | downcase -%}
+
+          {%- if section.settings.show_color_swatch and color_label contains downcase_option -%}
+            <ul class="product__available-colors list--unstyled" data-selector-type="color">
+              {%- for value in option.values -%}
+                {%- include 'variant-option-properties', value: value -%}
+
+                {%- assign downcase_value = value | downcase -%}
+                {%- assign color_swatch_white = false -%}
+
+                {%- if 'white,blanc,blanco,白,weiß,vit,branco' contains downcase_value -%}
+                  {%- assign color_swatch_white = true -%}
+                {%- endif -%}
+
+                <li class="product__color {% unless allow_variant_selection %}product__color--unavailable{% endunless %}" title="{{ value }}">
+                  <input id="{{ product.id }}-color-swatch-{{ forloop.index0 }}" {% unless allow_variant_selection %}disabled{% endunless %} class="single-option-selector" name="single-option-selector-{{ forloop.parentloop.index0 }}" data-option-index="option{{ forloop.parentloop.index }}" type="radio" {% if option.selected_value == value %}checked="checked"{% endif %} value="{{ value | escape }}">
+                  <label {% if allow_variant_selection %}tabindex="0"{% endif %} class="color-swatch {% if color_swatch_white %}color-swatch--white{% endif %}" for="{{ product.id }}-color-swatch-{{ forloop.index0 }}" style="background-color: {{ value | split: ' ' | last | handle }}; background-image: url({{ value | handle | append: '.png' | asset_url }})"></label>
+                  {%- include 'icon' with 'tick' -%}
+                </li>
+              {%- endfor -%}
+            </ul>
+            {%- elsif section.settings.show_size_swatch and size_label contains downcase_option -%}
+            <ul class="product__available-sizes list--unstyled" data-selector-type="size">
+              {%- for value in option.values -%}
+                {%- include 'variant-option-properties', value: value -%}
+
+                <li class="product__size {% unless allow_variant_selection %}product__size--unavailable{% endunless %}">
+                  <input id="{{ product.id }}-{{ downcase_option | escape }}-{{ forloop.index0 }}" {% unless allow_variant_selection %}disabled{% endunless %} type="radio" class="single-option-selector" name="single-option-selector-{{ forloop.parentloop.index0 }}" data-option-index="option{{ forloop.parentloop.index }}" {% if option.selected_value == value %}checked="checked"{% endif %} value="{{ value | escape }}">
+                  <label {% if allow_variant_selection %}tabindex="0"{% endif %} for="{{ product.id }}-{{ downcase_option | escape }}-{{ forloop.index0 }}" class="product__size-label">{{ value }}</label>
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- else -%}
+            <div class="styled-select styled-select--secondary">
+              {%- include 'icon' with 'dropdown-arrow' -%}
+
+              <select class="single-option-selector" id="single-option-selector-{{ forloop.index0 }}" data-option-index="option{{ forloop.index }}" data-selector-type="select">
+                {%- for value in option.values -%}
+                  {%- include 'variant-option-properties', value: value -%}
+
+                  <option value="{{ value | escape }}" {% unless allow_variant_selection %}disabled{% endunless %} {% if option.selected_value == value %}selected="selected"{% endif %}>{{ value }}</option>
+                {%- endfor -%}
+              </select>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    
+    
+    
+    
+        <!---MonogramPreview Start--->
+    
+     <div id="id01" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+            <div class="w3-center">
+                <span onclick="document.getElementById('id01').style.display='none'" id="btnClose" class="w3-button w3-large w3-hover-Sand w3-display-topright" title="Close Modal">&times;</span>
+
+            </div>
+
+            <div class="w3-row w3-border w3-topbar w3-bottombar w3-leftbar w3-rightbar">
+                           
+ 
+                <div id="monogramimage"  class="w3-half w3-container  w3-Sand   w3-center ">
+                
+                </div>   
+                   <div class="w3-half w3-container   w3-cell w3-light">
+                     
+                    <p class="line-item-property__field">
+                    </p>
+                    <p class="line-item-property__field">
+                    </p>
+                    <p class="line-item-property__field">
+
+                           <label class="ep_block  ">Enter Text<span class="validity"></span></label>
+                        <input class="w3-input w3-border  w3-round w3-margin-bottom" id="MonogramText" type="text" maxlength="15"  placeholder="Text"  name="properties[Text]" required>
+                      
+                            
+                    </p>
+
+                      <div id="validatorId">  </div>
+                      <label class="ep_block  ">Font :
+							<div id="debug">  </div>
+                          <div id="hiddenMonogramImage">  </div>
+                          <div id="PayLinkMonogramImage">  </div>                          
+                          <div id="showMonogramImage">  </div>
+                        </label>
+
+                        <select required id="MonogramFont"  class="w3-select w3-border" name="properties[Font]">
+                            <option value="Script" data-valname="101MPencilNameScript" data-option_value_key="0">Script</option>
+                            <option value="Italic" data-valname="101MPencilNameItalic" data-option_value_key="1">Italic</option>
+                            <option value="Classic" data-valname="101MPencilNameCla" data-option_value_key="2">Classic</option>
+                            <option value="Tall (Caps Only)" data-valname="101MPencilNameTall" data-option_value_key="3">Tall (Caps Only)</option>
+                        </select>
+                    </p>
+                    <p class="line-item-property__field">
+                        <label class="ep_block  ">Thread Color:</label>
+
+                         <select required id="threadcolor" class="w3-select w3-border" name="properties[Thread Color]">
+                           	<option value="Black" data-valcolor="A000000" data-option_value_key="25">Black</option>
+                           <option value="Army Green" data-valcolor="A908f68" data-option_value_key="25">Army Green</option>
+                           <option value="Burgundy" data-valcolor="A781818" data-option_value_key="0">Burgundy</option>
+<option value="Bright Fuchsia" data-valcolor="Af248a8" data-option_value_key="17">Bright Fuchsia</option>
+<option value="Copper" data-valcolor="Aac3717" data-option_value_key="17">Copper</option>
+<option value="Coral" data-valcolor="Affa2b8" data-option_value_key="20">Coral</option>
+<option value="Cream" data-valcolor="Afffdf2" data-option_value_key="23">Cream</option>
+<option value="Charcoal" data-valcolor="A646464" data-option_value_key="23">Charcoal</option>
+<option value="Dark Rust" data-valcolor="Aaf531e" data-option_value_key="23">Dark Rust</option>
+<option value="Dusty Blue" data-valcolor="A778c9f" data-option_value_key="23">Dusty Blue</option>
+<option value="Fire Orange" data-valcolor="Aff2a00" data-option_value_key="11">Fire Orange</option>
+<option value="Forest" data-valcolor="A00531b" data-option_value_key="11">Forest</option>
+<option value="Fuchsia" data-valcolor="Ae24593" data-option_value_key="16">Fuchsia</option>
+<option value="Gold" data-valcolor="Ae3cc94" data-option_value_key="3">Gold</option>
+<option value="Green" data-valcolor="A22812d" data-option_value_key="8">Green</option>
+<option value="Grinch Green" data-valcolor="A8acf6c" data-option_value_key="22">Grinch Green</option>
+<option value="Grey" data-valcolor="A838383" data-option_value_key="22">Grey</option>
+<option value="Khaki" data-valcolor="Abfa68e" data-option_value_key="22">Khaki</option>
+<option value="Peach" data-valcolor="Af7af9c" data-option_value_key="3">Peach</option>
+<option value="Deep Teal" data-valcolor="A215b5f" data-option_value_key="3">Deep Teal</option>
+<option value="Light Blue" data-valcolor="A80e1ea" data-option_value_key="11">Light Blue</option>
+<option value="Light Brown" data-valcolor="AA77D5B" data-option_value_key="11">Light Brown</option>
+<option value="Light Purple" data-valcolor="Ad39ef2" data-option_value_key="14">Light Purple</option>
+<option value="Light Teal" data-valcolor="A8ee9db" data-option_value_key="10">Light Teal</option>
+ <option value="Light Yellow" data-valcolor="Affee91" data-option_value_key="7">Light Yellow</option>
+<option value="Midnight" data-valcolor="A000b4f" data-option_value_key="7">Midnight</option>
+<option value="Mint" data-valcolor="A6dcb97" data-option_value_key="7">Mint</option>
+<option value="Moss Green" data-valcolor="A8c9970" data-option_value_key="7">Moss Green</option>
+<option value="Mauve" data-valcolor="Adda9ab" data-option_value_key="7">Mauve</option>
+<option value="Navy" data-valcolor="A222859" data-option_value_key="12">Navy</option>
+<option value="Neon Green" data-valcolor="Ac2ff4c" data-option_value_key="6">Neon Green</option>
+<option value="Neon Pink" data-valcolor="Aff92c9" data-option_value_key="18">Neon Pink</option>
+<option value="Neon Yellow" data-valcolor="Afffc0a" data-option_value_key="5">Neon Yellow</option>
+<option value="Orange" data-valcolor="Aff802b" data-option_value_key="2">Orange</option>
+<option value="Orchid" data-valcolor="Abe4cd6" data-option_value_key="2">Orchid</option>
+<option value="Pale Pink" data-valcolor="Affdfed" data-option_value_key="21">Pale Pink</option>
+<option value="Periwinkle" data-valcolor="A8f97e1" data-option_value_key="15">Periwinkle</option>
+<option value="Pink" data-valcolor="Aff9dc8" data-option_value_key="19">Pink</option>
+<option value="Plum" data-valcolor="A683b5c" data-option_value_key="19">Plum</option>
+<option value="Purple" data-valcolor="A6c16a2" data-option_value_key="13">Purple</option>
+<option value="Red" data-valcolor="Add0b0b" data-option_value_key="1">Red</option> 
+<option value="Rose Pink" data-valcolor="Ada7ca7" data-option_value_key="1">Rose Pink</option>
+<option value="Royal Blue" data-valcolor="A2124c1" data-option_value_key="26">Royal Blue</option>
+<option value="Rust" data-valcolor="Acb682e" data-option_value_key="26">Rust</option>
+<option value="Teal" data-valcolor="A23bdd4" data-option_value_key="9">Teal</option>
+<option value="Turquoise " data-valcolor="A40b4a5" data-option_value_key="9">Turquoise </option>
+<option value="Sunflower Yellow" data-valcolor="Aedcd1f" data-option_value_key="9">Sunflower Yellow</option>
+<option value="Violet" data-valcolor="A9f74d4" data-option_value_key="24">Violet</option>
+<option value="White" data-valcolor="Affffff" data-option_value_key="24">White</option>
+<option value="Yellow" data-valcolor="Affec4e" data-option_value_key="4">Yellow</option>
+                      </select>
+                    </p>
+                    <p class="line-item-property__field">
+                    
+                    <div class="w3-containerw3-center ">
+
+                        
+                     <!------- -adding the add to cart button------>
+                           <div class="product__payment-container  "  align="center">
+                         <!------- removing the preview button  <button type="button" value="Preview" id="btnOK" style="background-color: #88E6D4;"  class=" button button--primary">Preview</button>------>
+                              {%- if product.selected_or_first_available_variant.available -%}
+                                  <button  type="submit"    id="addtocart"   onclick="document.getElementById('id01').style.display='none'" class="product__add-to-cart button button--primary">
+                                  {%- if product.template_suffix == 'pre-order' -%}
+                                    {{- 'product.form.pre_order' | t -}}
+                                  {%- else -%}
+                                    {{- 'product.form.add_to_cart' | t -}}
+                                  {%- endif -%}
+                                </button>
+                              {%- else -%}
+                                <button type="submit" id="addtocart"    onclick="document.getElementById('id01').style.display='none'" class="product__add-to-cart button button--secondary" disabled="disabled">{{ 'product.form.sold_out' | t }}</button>
+                              {%- endif -%}
+
+                              {%- if section.settings.show_payment_button -%}
+                                {{ form | payment_button }}
+                              {%- endif -%}
+                            </div>                      
+                      <!------- -adding the add to cart button------>
+                      </div>
+
+                </div>
+       </div>
+         </div>
+  </div>
+       
+    
+    
+    <!---MonogramPreview End--->
+    
+    
+    
+  
+
+      <div class="form__control hidden-lap-and-up">
+        <label class="form__label">{{ 'product.form.price' | t }}</label>
+
+        <div class="product__prices">
+          {%- if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
+            <span class="product__price product__price--new h4" data-money-convertible>{{ product.selected_or_first_available_variant.price | money }}</span><!--
+                        --><span class="product__price product__price--old h4" data-money-convertible>{{ product.selected_or_first_available_variant.compare_at_price | money }}</span>
+          {%- else -%}
+            <span class="product__price h4" data-money-convertible>{{ product.selected_or_first_available_variant.price | money }}</span>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <div class="no-js form__control">
+        <label for="product-select-{{ product.id }}" class="form__label">{{ 'product.form.variant_label' | t }}</label>
+
+        <div class="styled-select styled-select--secondary">
+          {%- include 'icon' with 'dropdown-arrow' -%}
+          <select id="product-select-{{ product.id }}" name="id">
+            {%- for variant in product.variants -%}
+              <option {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %} {% unless variant.available %}disabled="disabled"{% endunless %} value="{{ variant.id }}" data-sku="{{ variant.sku }}">{{ variant.title }} - {{ variant.price | money }}</option>
+            {%- endfor -%}
+          </select>
+        </div>
+      </div>
+    {%- else -%}
+      <input type="hidden" name="id" data-sku="{{ product.selected_or_first_available_variant.sku }}" value="{{ product.selected_or_first_available_variant.id }}">
+    {%- endif -%}
+  </div>
+
+  {%- if section.settings.show_quantity_selector -%}
+    <div class="form__control">
+      <label class="form__label">{{ 'product.form.quantity' | t }}</label>
+
+      <div class="quantity-selector" >
+        <a href="#" data-action="decrease-product-quantity" title="{{ 'product.form.decrease_quantity' | t }}">{%- include 'icon' with 'minus' -%}</a>
+        <span class="quantity-selector__current-quantity">1</span>
+        <a href="#" data-action="increase-product-quantity" title="{{ 'product.form.increase_quantity' | t }}">{%- include 'icon' with 'plus' -%}</a>
+      </div>
+    </div>
+  {%- endif -%}
+
+  <input type="hidden" name="quantity" value="1">
+<!---MonogramPreview Start--->
+ <button type="button" id="preview-monogram" onclick="document.getElementById('id01').style.display='block'"  class="button button--primary">Make It Yours</button>   
+
+ {% comment %}   <!---Removing the Add to cart button transfer to pop-up---->
+  <div class="product__payment-container">
+    {%- if product.selected_or_first_available_variant.available -%}
+    	<button type="submit" class="product__add-to-cart button button--primary">
+        {%- if product.template_suffix == 'pre-order' -%}
+          {{- 'product.form.pre_order' | t -}}
+        {%- else -%}
+          {{- 'product.form.add_to_cart' | t -}}
+        {%- endif -%}
+      </button>
+    {%- else -%}
+      <button type="submit" class="product__add-to-cart button button--secondary" disabled="disabled">{{ 'product.form.sold_out' | t }}</button>
+    {%- endif -%}
+
+    {%- if section.settings.show_payment_button -%}
+      {{ form | payment_button }}
+    {%- endif -%}
+  </div>
+ {% endcomment %} 
+ <!---MonogramPreview End--->
+
+  {%- if section.settings.show_payment_button and product.selected_or_first_available_variant.available == false -%}
+    <style>
+      #shopify-section-{{ section.id }} .shopify-payment-button {
+        display: none;
+      }
+    </style>
+  {%- endif -%}
+{%- endform -%}

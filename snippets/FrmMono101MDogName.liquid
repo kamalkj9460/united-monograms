@@ -1,0 +1,231 @@
+<!---MonogramPreview Start--->
+<!--MonoJavs-->
+<div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+        <div class="w3-center">
+            <span onclick="document.getElementById('id01').style.display='none'" id="btnClose"
+                class="w3-button w3-large w3-hover-Sand w3-display-topright" title="Close Modal">&times;</span>
+
+        </div>
+
+        <div class="w3-row w3-border w3-topbar w3-bottombar w3-leftbar w3-rightbar">
+
+
+            <div id="monogramimage" class="w3-half w3-container  w3-Sand   w3-center ">
+
+            </div>
+            <div class="w3-half w3-container   w3-cell w3-light">
+
+                <p class="line-item-property__field">
+                </p>
+                <p class="line-item-property__field">
+                </p>
+                <p class="line-item-property__field">
+
+                <p class="line-item-property__field">
+                    <label class="ep_block">Choose Dog Breed:</label>
+
+                    <select required id="Icon" form="{{ form_id}}"  class="w3-select w3-border" name="properties[Icon]">
+                        <option value="Akita Line" data-valname="Akita" data-option_value_key="0">Akita Line</option>
+                        <option value="American Bulldog" data-valname="AmeriBull" data-option_value_key="1">American Bulldog</option> 
+                        <option value="Aussie Doodle" data-valname="Aussie" data-option_value_key="2">Aussie Doodle</option>
+                        <option value="Australian Shepard" data-valname="AusShe" data-option_value_key="3">Australian Shepard</option> 
+                        <option value="Beagle" data-valname="Beag" data-option_value_key="4">Beagle</option>
+                        <option value="Belgian Malinois" data-valname="Belg" data-option_value_key="5">Belgian Malinois</option> 
+                        <option value="Bernese" data-valname="Bernese" data-option_value_key="6">Bernese</option>
+                        <option value="Border Collie" data-valname="Border" data-option_value_key="7">Border Collie</option> 
+                        <option value="Boston Terrier" data-valname="Boston" data-option_value_key="8">Boston Terrier</option>
+                        <option value="Boxer" data-valname="Boxer" data-option_value_key="9">Boxer</option>  
+                        <option value="Brittany" data-valname="Britt" data-option_value_key="10">Brittany</option> 
+                        <option value="Bulldog" data-valname="BullD" data-option_value_key="11">Bulldog</option>
+                        <option value="Bull Terrier" data-valname="BullT" data-option_value_key="12">Bull Terrier</option> 
+                        <option value="Cane Corso" data-valname="Cane" data-option_value_key="13">Cane Corso</option>
+                        <option value="Chihuahua" data-valname="Chih" data-option_value_key="14">Chihuahua</option> 
+                        <option value="Cockapoo" data-valname="Cock" data-option_value_key="15">Cockapoo</option>
+                        <option value="Coonhound" data-valname="Coon" data-option_value_key="16">Coonhound</option> 
+                        <option value="Corgi" data-valname="Corgi" data-option_value_key="17">Corgi</option>
+                        <option value="Dachshund" data-valname="Dach" data-option_value_key="18">Dachshund</option> 
+                        <option value="Dalmation" data-valname="Dalm" data-option_value_key="19">Dalmation</option>
+                        <option value="Doberman" data-valname="Dober" data-option_value_key="20">Doberman</option>
+                        <option value="Doodle" data-valname="Doodle" data-option_value_key="21">Doodle</option>
+                        <option value="English Bulldog" data-valname="EngBull" data-option_value_key="22">English Bulldog</option> 
+                        <option value="English Setter" data-valname="EngSet" data-option_value_key="23">English Setter</option>
+                        <option value="Fox Terrier" data-valname="Fox" data-option_value_key="24">Fox Terrier</option> 
+                        <option value="French Bulldog" data-valname="French" data-option_value_key="25">French Bulldog</option>
+                        <option value="German Pointer" data-valname="GermP" data-option_value_key="26">German Pointer</option> 
+                        <option value="German Shepard" data-valname="GermS" data-option_value_key="27">German Shepard</option>
+                        <option value="Goldi" data-valname="Goldi" data-option_value_key="28">Goldi</option> 
+                        <option value="Great Dane" data-valname="Great" data-option_value_key="29">Great Dane</option>
+                        <option value="Huskie" data-valname="Huskie" data-option_value_key="30">Huskie</option> 
+                        <option value="Jack Russel" data-valname="Jack" data-option_value_key="31">Jack Russel</option>
+                        <option value="Labrador" data-valname="Lab" data-option_value_key="32">Labrador</option> 
+                        <option value="Lhasa Apso" data-valname="Lhasa" data-option_value_key="33">Lhasa Apso</option> 
+                        <option value="Maltese" data-valname="Maltese" data-option_value_key="34">Maltese</option>
+                        <option value="Maltipoo" data-valname="Maltip" data-option_value_key="35">Maltipoo</option> 
+                        <option value="Pitbull" data-valname="Pitbull" data-option_value_key="36">Pitbull</option>
+                        <option value="Pomeranian" data-valname="Pom" data-option_value_key="37">Pomeranian</option> 
+                        <option value="Poodle" data-valname="Pood" data-option_value_key="38">Poodle</option>
+                        <option value="Pug" data-valname="Pug" data-option_value_key="39">Pug</option> 
+                        <option value="Rottie" data-valname="Rot" data-option_value_key="40">Rottie</option>
+                        <option value="Saint Bernard" data-valname="Saint" data-option_value_key="41">Saint Bernard</option> 
+                        <option value="Schnauzer" data-valname="Schn" data-option_value_key="42">Schnauzer</option>
+                        <option value="Shetland Sheepdog" data-valname="Shet" data-option_value_key="43">Shetland Sheepdog</option> 
+                        <option value="Shih Tzu" data-valname="Shih" data-option_value_key="44">Shih Tzu</option>
+                        <option value="Springer Spaniel" data-valname="Spring" data-option_value_key="45">Springer Spaniel</option> 
+                        <option value="Staffordshire" data-valname="Staff" data-option_value_key="46">Staffordshire</option>
+                        <option value="Yorkie" data-valname="Yorkie" data-option_value_key="47">Yorkie</option>  
+
+                    </select>
+                </p>
+
+                <p class="line-item-property__field">
+                </p>
+                <p class="line-item-property__field">
+                </p>
+                <p class="line-item-property__field">
+                <div id="validatorId"> </div>
+                <label class="ep_block  ">Enter Text:<span class="validity"></span></label>
+                <input class="w3-input w3-border  w3-round w3-margin-bottom" id="MonogramText" type="text" maxlength="15" form="{{ form_id}}" placeholder="ABC" name="properties[Text]" required>
+
+
+                </p>
+
+
+                <label class="ep_block  ">Font:
+                    <div id="debug"> </div>
+                    <div id="hiddenMonogramImage"> </div>
+                    <div id="PayLinkMonogramImage"> </div>
+                    <div id="showMonogramImage"> </div>
+                </label>
+
+                <select required id="MonogramFont" form="{{ form_id}}"  class="w3-select w3-border" name="properties[Font]"> 
+                    <option value="Italic" data-valname="101MAkitaItalic" data-option_value_key="0">Italic</option>
+                    <option value="Classic" data-valname="101MAkitaClassic" data-option_value_key="1">Classic</option>
+                    <option value="Tall" data-valname="101MAkitaTall" data-option_value_key="2">Tall</option> 
+                    <option value="Handwriting" data-valname="101MAkitaHand" data-option_value_key="3">Handwriting</option> 
+                </select>
+                </p>
+              
+                <p class="line-item-property__field">
+                    <label class="ep_block  ">Dog Thread Color:</label>
+                    <select required id="threadcolor" form="{{ form_id}}"  class="w3-select w3-border" name="properties[Thread Color]"> 
+                        <option value="White" data-valcolor="Affffff" data-option_value_key="24">White</option>
+                        <option value="Black" data-valcolor="A000000" data-option_value_key="25">Black</option>  
+                        <option value="Army Green" data-valcolor="A908f68" data-option_value_key="25">Army Green</option> 
+                        <option value="Burgundy" data-valcolor="A781818" data-option_value_key="0">Burgundy</option>
+                        <option value="Bright Fuchsia" data-valcolor="Af248a8" data-option_value_key="17">Bright Fuchsia</option>
+                        <option value="Copper" data-valcolor="Aac3717" data-option_value_key="17">Copper</option>
+                        <option value="Coral" data-valcolor="Affa2b8" data-option_value_key="20">Coral</option>
+                        <option value="Cream" data-valcolor="Afffdf2" data-option_value_key="23">Cream</option>
+                        <option value="Charcoal" data-valcolor="A646464" data-option_value_key="23">Charcoal</option>
+                        <option value="Dark Rust" data-valcolor="Aaf531e" data-option_value_key="23">Dark Rust</option>
+                        <option value="Dusty Blue" data-valcolor="A778c9f" data-option_value_key="23">Dusty Blue</option>
+                        <option value="Fire Orange" data-valcolor="Aff2a00" data-option_value_key="11">Fire Orange</option>
+                        <option value="Forest" data-valcolor="A00531b" data-option_value_key="11">Forest</option>
+                        <option value="Fuchsia" data-valcolor="Ae24593" data-option_value_key="16">Fuchsia</option>
+                        <option value="Gold" data-valcolor="Ae3cc94" data-option_value_key="3">Gold</option>
+                        <option value="Green" data-valcolor="A22812d" data-option_value_key="8">Green</option>
+                        <option value="Grinch Green" data-valcolor="A8acf6c" data-option_value_key="22">Grinch Green</option>
+                        <option value="Grey" data-valcolor="A838383" data-option_value_key="22">Grey</option>
+                        <option value="Khaki" data-valcolor="Abfa68e" data-option_value_key="22">Khaki</option>
+                        <option value="Peach" data-valcolor="Af7af9c" data-option_value_key="3">Peach</option>
+                        <option value="Deep Teal" data-valcolor="A215b5f" data-option_value_key="3">Deep Teal</option>
+                        <option value="Light Blue" data-valcolor="A80e1ea" data-option_value_key="11">Light Blue</option>
+                        <option value="Light Brown" data-valcolor="AA77D5B" data-option_value_key="11">Light Brown</option>
+                        <option value="Light Purple" data-valcolor="Ad39ef2" data-option_value_key="14">Light Purple</option>
+                        <option value="Light Teal" data-valcolor="A8ee9db" data-option_value_key="10">Light Teal</option>
+                        <option value="Light Yellow" data-valcolor="Affee91" data-option_value_key="7">Light Yellow</option>
+                        <option value="Midnight" data-valcolor="A000b4f" data-option_value_key="7">Midnight</option>
+                        <option value="Mint" data-valcolor="A6dcb97" data-option_value_key="7">Mint</option>
+                        <option value="Moss Green" data-valcolor="A8c9970" data-option_value_key="7">Moss Green</option>
+                        <option value="Mauve" data-valcolor="Adda9ab" data-option_value_key="7">Mauve</option>
+                        <option value="Navy" data-valcolor="A222859" data-option_value_key="12">Navy</option>
+                        <option value="Neon Green" data-valcolor="Ac2ff4c" data-option_value_key="6">Neon Green</option>
+                        <option value="Neon Pink" data-valcolor="Aff92c9" data-option_value_key="18">Neon Pink</option>
+                        <option value="Neon Yellow" data-valcolor="Afffc0a" data-option_value_key="5">Neon Yellow</option>
+                        <option value="Orange" data-valcolor="Aff802b" data-option_value_key="2">Orange</option>
+                        <option value="Orchid" data-valcolor="Abe4cd6" data-option_value_key="2">Orchid</option>
+                        <option value="Pale Pink" data-valcolor="Affdfed" data-option_value_key="21">Pale Pink</option>
+                        <option value="Periwinkle" data-valcolor="A8f97e1" data-option_value_key="15">Periwinkle</option>
+                        <option value="Pink" data-valcolor="Aff9dc8" data-option_value_key="19">Pink</option>
+                        <option value="Plum" data-valcolor="A683b5c" data-option_value_key="19">Plum</option>
+                        <option value="Purple" data-valcolor="A6c16a2" data-option_value_key="13">Purple</option>
+                        <option value="Red" data-valcolor="Add0b0b" data-option_value_key="1">Red</option> 
+                        <option value="Rose Pink" data-valcolor="Ada7ca7" data-option_value_key="1">Rose Pink</option>
+                        <option value="Royal Blue" data-valcolor="A2124c1" data-option_value_key="26">Royal Blue</option>
+                        <option value="Rust" data-valcolor="Acb682e" data-option_value_key="26">Rust</option>
+                        <option value="Teal" data-valcolor="A23bdd4" data-option_value_key="9">Teal</option>
+                        <option value="Turquoise " data-valcolor="A40b4a5" data-option_value_key="9">Turquoise </option>
+                        <option value="Sunflower Yellow" data-valcolor="Aedcd1f" data-option_value_key="9">Sunflower Yellow</option>
+                        <option value="Violet" data-valcolor="A9f74d4" data-option_value_key="24">Violet</option>
+                        <option value="Yellow" data-valcolor="Affec4e" data-option_value_key="4">Yellow</option>
+                    </select>
+                </p> 
+                <p class="line-item-property__field">
+              
+                <p class="line-item-property__field">
+                    <label class="ep_block  ">Dog Text Thread Color:</label>
+                    <select required id="textthreadcolor" form="{{ form_id}}"  class="w3-select w3-border" name="properties[Text Thread Color]"> 
+                        <option value="White" data-valcolor="Affffff" data-option_value_key="24">White</option>
+                        <option value="Black" data-valcolor="A000000" data-option_value_key="25">Black</option>  
+                        <option value="Army Green" data-valcolor="A908f68" data-option_value_key="25">Army Green</option> 
+                        <option value="Burgundy" data-valcolor="A781818" data-option_value_key="0">Burgundy</option>
+                        <option value="Bright Fuchsia" data-valcolor="Af248a8" data-option_value_key="17">Bright Fuchsia</option>
+                        <option value="Copper" data-valcolor="Aac3717" data-option_value_key="17">Copper</option>
+                        <option value="Coral" data-valcolor="Affa2b8" data-option_value_key="20">Coral</option>
+                        <option value="Cream" data-valcolor="Afffdf2" data-option_value_key="23">Cream</option>
+                        <option value="Charcoal" data-valcolor="A646464" data-option_value_key="23">Charcoal</option>
+                        <option value="Dark Rust" data-valcolor="Aaf531e" data-option_value_key="23">Dark Rust</option>
+                        <option value="Dusty Blue" data-valcolor="A778c9f" data-option_value_key="23">Dusty Blue</option>
+                        <option value="Fire Orange" data-valcolor="Aff2a00" data-option_value_key="11">Fire Orange</option>
+                        <option value="Forest" data-valcolor="A00531b" data-option_value_key="11">Forest</option>
+                        <option value="Fuchsia" data-valcolor="Ae24593" data-option_value_key="16">Fuchsia</option>
+                        <option value="Gold" data-valcolor="Ae3cc94" data-option_value_key="3">Gold</option>
+                        <option value="Green" data-valcolor="A22812d" data-option_value_key="8">Green</option>
+                        <option value="Grinch Green" data-valcolor="A8acf6c" data-option_value_key="22">Grinch Green</option>
+                        <option value="Grey" data-valcolor="A838383" data-option_value_key="22">Grey</option>
+                        <option value="Khaki" data-valcolor="Abfa68e" data-option_value_key="22">Khaki</option>
+                        <option value="Peach" data-valcolor="Af7af9c" data-option_value_key="3">Peach</option>
+                        <option value="Deep Teal" data-valcolor="A215b5f" data-option_value_key="3">Deep Teal</option>
+                        <option value="Light Blue" data-valcolor="A80e1ea" data-option_value_key="11">Light Blue</option>
+                        <option value="Light Brown" data-valcolor="AA77D5B" data-option_value_key="11">Light Brown</option>
+                        <option value="Light Purple" data-valcolor="Ad39ef2" data-option_value_key="14">Light Purple</option>
+                        <option value="Light Teal" data-valcolor="A8ee9db" data-option_value_key="10">Light Teal</option>
+                        <option value="Light Yellow" data-valcolor="Affee91" data-option_value_key="7">Light Yellow</option>
+                        <option value="Midnight" data-valcolor="A000b4f" data-option_value_key="7">Midnight</option>
+                        <option value="Mint" data-valcolor="A6dcb97" data-option_value_key="7">Mint</option>
+                        <option value="Moss Green" data-valcolor="A8c9970" data-option_value_key="7">Moss Green</option>
+                        <option value="Mauve" data-valcolor="Adda9ab" data-option_value_key="7">Mauve</option>
+                        <option value="Navy" data-valcolor="A222859" data-option_value_key="12">Navy</option>
+                        <option value="Neon Green" data-valcolor="Ac2ff4c" data-option_value_key="6">Neon Green</option>
+                        <option value="Neon Pink" data-valcolor="Aff92c9" data-option_value_key="18">Neon Pink</option>
+                        <option value="Neon Yellow" data-valcolor="Afffc0a" data-option_value_key="5">Neon Yellow</option>
+                        <option value="Orange" data-valcolor="Aff802b" data-option_value_key="2">Orange</option>
+                        <option value="Orchid" data-valcolor="Abe4cd6" data-option_value_key="2">Orchid</option>
+                        <option value="Pale Pink" data-valcolor="Affdfed" data-option_value_key="21">Pale Pink</option>
+                        <option value="Periwinkle" data-valcolor="A8f97e1" data-option_value_key="15">Periwinkle</option>
+                        <option value="Pink" data-valcolor="Aff9dc8" data-option_value_key="19">Pink</option>
+                        <option value="Plum" data-valcolor="A683b5c" data-option_value_key="19">Plum</option>
+                        <option value="Purple" data-valcolor="A6c16a2" data-option_value_key="13">Purple</option>
+                        <option value="Red" data-valcolor="Add0b0b" data-option_value_key="1">Red</option> 
+                        <option value="Rose Pink" data-valcolor="Ada7ca7" data-option_value_key="1">Rose Pink</option>
+                        <option value="Royal Blue" data-valcolor="A2124c1" data-option_value_key="26">Royal Blue</option>
+                        <option value="Rust" data-valcolor="Acb682e" data-option_value_key="26">Rust</option>
+                        <option value="Teal" data-valcolor="A23bdd4" data-option_value_key="9">Teal</option>
+                        <option value="Turquoise " data-valcolor="A40b4a5" data-option_value_key="9">Turquoise </option>
+                        <option value="Sunflower Yellow" data-valcolor="Aedcd1f" data-option_value_key="9">Sunflower Yellow</option>
+                        <option value="Violet" data-valcolor="A9f74d4" data-option_value_key="24">Violet</option>
+                        <option value="Yellow" data-valcolor="Affec4e" data-option_value_key="4">Yellow</option>
+                    </select>
+                </p> 
+                <p class="line-item-property__field">
+
+                    {%- include 'MonoAddtoCart' -%}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---MonogramPreview End--->
+<button type="button" id="preview-monogram" onclick="document.getElementById('id01').style.display='block'" class="button button--primary">Make It Yours</button>

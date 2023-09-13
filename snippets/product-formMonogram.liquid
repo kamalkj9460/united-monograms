@@ -1,0 +1,2599 @@
+<!--MonoJavs-->
+{%- form 'product', product, id: form_id, class: 'product-single__form' -%}
+
+{%- liquid
+assign enable_dynamic_buttons = false
+if show_dynamic_checkout and template != 'product.preorder'
+assign enable_dynamic_buttons = true
+endif
+-%}
+
+{%- if enable_dynamic_buttons -%}
+<div class="payment-buttons">
+  {%- endif -%}
+
+  {%- liquid
+  assign default_text = 'products.product.add_to_cart' | t
+  assign button_text = 'products.product.add_to_cart' | t
+  if template == 'product.preorder'
+  assign default_text = 'products.product.preorder' | t
+  assign button_text = 'products.product.preorder' | t
+  endif
+  unless current_variant.available
+  assign button_text = 'products.product.sold_out' | t
+  endunless
+  -%}
+
+  <!--MonoJavs-->
+  {% assign templateName = template.suffix %}
+  {% case templateName %}
+
+  <!------------------------------------------------------------------------>
+  <!------------------------------EMB--------------------------------------->
+  <!------------------------------------------------------------------------>
+  
+  {% when 'Mono17-71M' %}
+  {% include 'FrmMono17-71M' %}
+  
+  {% when 'Mono177MRatherXmas' %}
+  {% include 'FrmMono177MRatherXmas' %}
+  
+  {% when 'Mono177MRatherBe' %}
+  {% include 'FrmMono177MRatherBe' %}
+
+  {% when 'Mono177MCollegePick' %}
+  {% include 'FrmMono177MCollegePick' %}
+  
+  {% when 'Mono101MAirplane' %}
+  {% include 'FrmMono101MAirplane' %}
+
+  {% when 'Mono101MBlueTree' %}
+  {% include 'FrmMono101MBlueTree' %}
+
+  {% when 'Mono101MBunny' %}
+  {% include 'FrmMono101MBunny' %}
+
+  {% when 'Mono101MGrinchHand' %}
+  {% include 'FrmMono101MGrinchHand' %}
+
+  {% when '101MFlagBow' %}
+  {% include 'Frm101MFlagBow' %}
+
+  {% when '101MLemon' %}
+  {% include 'Frm101MLemon' %}
+
+  {% when '101MLipstick' %}
+  {% include 'Frm101MLipstick' %}
+
+  {% when '101MLobster' %}
+  {% include 'Frm101MLobster' %}
+
+  {% when '101MWMelon' %}
+  {% include 'Frm101MWMelon' %}
+
+  {% when 'Mono101MAlabama' %}
+  {% include 'FrmMono101MAlabama' %}
+
+  {% when 'Mono101MAntlerLights' %}
+  {% include 'FrmMono101MAntlerLights' %}
+
+  {% when 'Mono101MAntlers' %}
+  {% include 'FrmMono101MAntlers' %}
+
+  {% when 'Mono101MApple' %}
+  {% include 'FrmMono101MApple' %}
+
+  {% when 'Mono101MAuntie' %}
+  {% include 'FrmMono101MAuntie' %}
+
+  {% when 'Mono101MBdayBabe' %}
+  {% include 'FrmMono101MBdayBabe' %}
+
+  {% when 'Mono101MBeMerry' %}
+  {% include 'FrmMono101MBeMerry' %}
+
+  {% when 'Mono101MCaduceus' %}
+  {% include 'FrmMono101MCaduceus' %}
+
+  {% when 'Mono101MCandy' %}
+  {% include 'FrmMono101MCandy' %}
+
+  {% when 'Mono101MCandyHearts' %}
+  {% include 'FrmMono101MCandyHearts' %}
+
+  {% when 'Mono101MCastle' %}
+  {% include 'FrmMono101MCastle' %}
+
+  {% when 'Mono101MCatMom' %}
+  {% include 'FrmMono101MCatMom' %}
+
+  {% when 'Mono101MChampagne' %}
+  {% include 'FrmMono101MChampagne' %}
+
+  {% when 'Mono101MChickfilyay' %}
+  {% include 'FrmMono101MChickfilyay' %}
+
+  {% when 'MonoDTGChino' %}
+  {% include 'FrmMonoDTGChino' %}
+
+  {% when 'Mono101MClassicSanta' %}
+  {% include 'FrmMono101MClassicSanta' %}
+
+  {% when 'Mono101MCLPreview' %}
+  {% include 'FrmMono101MCLPreview' %}
+
+  {% when 'Mono101MCoffeeGucci' %}
+  {% include 'FrmMono101MCoffeeGucci' %}
+
+  {% when 'Mono101MCoffeeLove' %}
+  {% include 'FrmMono101MCoffeeLove' %}
+
+  {% when 'Mono101MCup' %}
+  {% include 'FrmMono101MCup' %}
+
+  {% when 'Mono101MDisneyGucci' %}
+  {% include 'FrmMono101MDisneyGucci' %}
+
+  {% when 'Mono101MDogMom' %}
+  {% include 'FrmMono101MDogMom' %}
+
+  {% when 'Mono101MDogName' %}
+  {% include 'FrmMono101MDogName' %}
+
+  {% when 'Mono101MDonutPreview' %}
+  {% include 'FrmMono101MDonutPreview' %}
+
+  {% when 'Mono101MDrSeuss' %}
+  {% include 'FrmMono101MDrSeuss' %} 
+
+  {% when 'Mono139MDrinking' %}
+  {% include 'FrmMono139MDrinking' %}
+
+  {% when 'Mono101MEggs' %}
+  {% include 'FrmMono101MEggs' %}
+
+  {% when 'Mono101MElf' %}
+  {% include 'FrmMono101MElf' %}
+
+  {% when 'Mono101MFancyDia' %}
+  {% include 'FrmMono101MFancyDia' %}
+
+  {% when 'Mono101MFireworks' %}
+  {% include 'FrmMono101MFireworks' %}
+
+  {% when 'Mono101MFlags' %}
+  {% include 'FrmMono101MFlags' %}
+
+  {% when 'Mono101MFlake' %}
+  {% include 'FrmMono101MFlake' %}
+
+  {% when 'Mono101MFlamingo' %}
+  {% include 'FrmMono101MFlamingo' %}
+
+  {% when 'Mono101MFootball' %}
+  {% include 'FrmMono101MFootball' %}
+
+  {% when 'Mono101MGameday' %}
+  {% include 'FrmMono101MGameday' %}
+
+  {% when 'Mono101MGBMan' %}
+  {% include 'FrmMono101MGBMan' %}
+
+  {% when 'Mono101MGinghamTree' %}
+  {% include 'FrmMono101MGinghamTree' %}
+
+  {% when 'Mono101MGingerMick' %}
+  {% include 'FrmMono101MGingerMick' %}
+
+  {% when 'Mono101MGrandma' %}
+  {% include 'FrmMono101MGrandma' %}
+
+  {% when 'Mono101MHeartBorder' %}
+  {% include 'FrmMono101MHeartBorder' %}
+
+  {% when 'Mono101MHeartNames' %}
+  {% include 'FrmMono101MHeartNames' %}
+
+  {% when 'Mono101MHelloPump' %}
+  {% include 'FrmMono101MHelloPump' %}
+
+  {% when 'Mono101MHolly' %}
+  {% include 'FrmMono101MHolly' %}
+
+  {% when 'Mono101MIcedCoffee' %}
+  {% include 'FrmMono101MIcedCoffee' %}
+  
+  {% when 'Mono101MIconSanta' %}
+  {% include 'FrmMono101MIconSanta' %}
+
+  {% when 'Mono101MJoy' %}
+  {% include 'FrmMono101MJoy' %}
+
+  {% when 'Mono101MKnock' %}
+  {% include 'FrmMono101MKnock' %}
+
+  {% when 'Mono101MLeafWreath' %}
+  {% include 'FrmMono101MLeafWreath' %}
+
+  {% when 'Mono101MLeopard' %}
+  {% include 'FrmMono101MLeopard' %}
+
+  {% when 'Mono101MLeopardTree' %}
+  {% include 'FrmMono101MLeopardTree' %}
+
+  {% when 'Mono101MLeopPump' %}
+  {% include 'FrmMono101MLeopPump' %}
+
+  {% when 'Mono101MLights' %}
+  {% include 'FrmMono101MLights' %}
+
+  {% when 'Mono101MLover' %}
+  {% include 'FrmMono101MLover' %}
+
+  {% when 'Mono101MMama' %}
+  {% include 'FrmMono101MMama' %}
+
+  {% when 'Mono101MMAMAHEART' %}
+  {% include 'FrmMono101MMAMAHEART' %}
+
+  {% when 'Mono101MMAMAretro' %}
+  {% include 'FrmMono101MMAMAretro' %}
+
+  {% when 'Mono101MMerry' %}
+  {% include 'FrmMono101MMerry' %}
+
+  {% when 'Mono101MMickey' %}
+  {% include 'FrmMono101MMickey' %}
+
+  {% when 'Mono101MMickeyGhost' %}
+  {% include 'FrmMono101MMickeyGhost' %}
+
+  {% when 'Mono101MMickeyHead' %}
+  {% include 'FrmMono101MMickeyHead' %}
+
+  {% when 'Mono101MMickeyPumpkin' %}
+  {% include 'FrmMono101MMickeyPumpkin' %}
+
+  {% when 'Mono101MMini' %}
+  {% include 'FrmMono101MMini' %}
+
+  {% when 'Mono101MMIYCandyHearts' %}
+  {% include 'FrmMono101MMIYCandyHearts' %}
+
+  {% when 'Mono101MMrs' %}
+  {% include 'FrmMono101MMrs' %}
+
+  {% when 'Mono101MNurse' %}
+  {% include 'FrmMono101MNurse' %}
+
+  {% when 'Mono101MOMG' %}
+  {% include 'FrmMono101MOMG' %}
+
+  {% when 'Mono101MOrnament' %}
+  {% include 'FrmMono101MOrnament' %}
+
+  {% when 'Mono101MPalmTrees' %}
+  {% include 'FrmMono101MPalmTrees' %}
+
+  {% when 'Mono101MPaw' %}
+  {% include 'FrmMono101MPaw' %}
+
+  {% when 'Mono101MPatStars' %}
+  {% include 'FrmMono101MPatStars' %}
+
+  {% when 'Mono101MPeachy' %}
+  {% include 'FrmMono101MPeachy' %}
+
+  {% when 'Mono101MPineapple' %}
+  {% include 'FrmMono101MPineapple' %}
+
+  {% when 'Mono101MPinkLeopard' %}
+  {% include 'FrmMono101MPinkLeopard' %}
+
+  {% when 'Mono101MPretzel' %}
+  {% include 'FrmMono101MPretzel' %}
+
+  {% when 'Mono101MPSCup' %}
+  {% include 'FrmMono101MPSCup' %}
+
+  {% when 'Mono101MPumpkin' %}
+  {% include 'FrmMono101MPumpkin' %}
+
+  {% when 'Mono101MPumpkinLeaves' %}
+  {% include 'FrmMono101MPumpkinLeaves' %}
+
+  {% when 'Mono101MRainbow' %}
+  {% include 'FrmMono101MRainbow' %}
+  
+  {% when 'Mono177MReading' %}
+  {% include 'FrmMono177MReading' %}
+
+  {% when 'Mono101MSanderson' %}
+  {% include 'FrmMono101MSanderson' %}
+
+  {% when 'Mono101MSanta' %}
+  {% include 'FrmMono101MSanta' %}
+
+  {% when 'Mono101MSB101M' %}
+  {% include 'FrmMono101MSB101M' %}
+
+  {% when 'Mono101MSeashell' %}
+  {% include 'FrmMono101MSeashell' %}
+
+  {% when 'Mono101MShamrock' %}
+  {% include 'FrmMono101MShamrock' %}
+
+  {% when 'Mono101MShamrockFrame' %}
+  {% include 'FrmMono101MShamrockFrame' %}
+
+  {% when 'Mono101MSmileyXOXO' %}
+  {% include 'FrmMono101MSmileyXOXO' %}
+
+  {% when 'Mono101MSnowman' %}
+  {% include 'FrmMono101MSnowman' %}
+
+  {% when 'Mono101MSparklers' %}
+  {% include 'FrmMono101MSparklers' %}
+
+  {% when 'Mono101MSports' %}
+  {% include 'FrmMono101MSports' %}
+
+  {% when 'Mono101MStars' %}
+  {% include 'FrmMono101MStars' %}
+
+  {% when 'Mono101MSunFlr' %}
+  {% include 'FrmMono101MSunFlr' %}
+
+  {% when 'Mono101MSunglasses' %}
+  {% include 'FrmMono101MSunglasses' %}
+
+  {% when 'Mono101MTree' %}
+  {% include 'FrmMono101MTree' %}
+
+  {% when 'Mono101MTruck' %}
+  {% include 'FrmMono101MTruck' %}
+
+  {% when 'Mono101MWine' %}
+  {% include 'FrmMono101MWine' %}
+
+  {% when 'Mono101MXOXO' %}
+  {% include 'FrmMono101MXOXO' %}
+
+  {% when 'Mono101MXOXOBlock' %}
+  {% include 'FrmMono101MXOXOBlock' %}
+
+  {% when 'Mono101MXOXOScript' %}
+  {% include 'FrmMono101MXOXOScript' %} 
+
+  {% when 'Mono101MFball' %}
+  {% include 'FrmMono101MFball' %} 
+
+  {% when 'Mono101MCoffee' %}
+  {% include 'FrmMono101MCoffee' %}
+
+  {% when 'Mono101MPumpkinTall' %}
+  {% include 'FrmMono101MPumpkinTall' %}
+
+  {% when 'Mono101MPSL' %}
+  {% include 'FrmMono101MPSL' %}
+
+  {% when 'Mono101MWitch' %}
+  {% include 'FrmMono101MWitch' %}
+
+  <!------------------------------------------------------------------------>
+  <!------------------------------DTG--------------------------------------->
+  <!------------------------------------------------------------------------>
+
+  {% when 'MonoDTGHollyDolly' %}
+  {% include 'FrmMonoDTGHollyDolly' %}
+
+  {% when 'MonoDTGMF' %}
+  {% include 'FrmMonoDTGMF' %}
+
+  {% when 'MonoDTGPolar' %}
+  {% include 'FrmMonoDTGPolar' %}
+
+  {% when 'MonoDTGNicksBrew' %}
+  {% include 'FrmMonoDTGNicksBrew' %}
+
+  {% when 'MonoDTGCupCheer' %}
+  {% include 'FrmMonoDTGCupCheer' %}
+
+  {% when 'MonoDTGPoleCrest' %}
+  {% include 'FrmMonoDTGPoleCrest' %}
+
+  {% when 'MonoDTGHowdyXMas' %}
+  {% include 'FrmMonoDTGHowdyXMas' %}
+
+  {% when 'MonoDTGStoryCups' %}
+  {% include 'FrmMonoDTGStoryCups' %}
+
+  {% when 'MonoDTGElfCups' %}
+  {% include 'FrmMonoDTGElfCups' %}
+
+  {% when 'MonoDTGEducator' %}
+  {% include 'FrmMonoDTGEducator' %}
+
+  {% when 'MonoDTGNorthPole' %}
+  {% include 'FrmMonoDTGNorthPole' %}
+
+  {% when 'MonoDTGTieButterfly' %}
+  {% include 'FrmMonoDTGTieButterfly' %}
+  
+  {% when 'MonoDTGGhostSpook' %}
+  {% include 'FrmMonoDTGGhostSpook' %} 
+    
+  {% when 'MonoDTGHowdyPump' %}
+  {% include 'FrmMonoDTGHowdyPump' %}  
+    
+  {% when 'MonoDTGBooHaw' %}
+  {% include 'FrmMonoDTGBooHaw' %}
+
+  {% when 'MonoDTGWonHall' %}
+  {% include 'FrmMonoDTGWonHall' %}
+
+  {% when 'MonoDTGSkellyCoffee' %}
+  {% include 'FrmMonoDTGSkellyCoffee' %}
+
+  {% when 'MonoDTGTeachHeart' %}
+  {% include 'FrmMonoDTGTeachHeart' %}
+
+  {% when 'MonoDTGAirplaneMode' %}
+  {% include 'FrmMonoDTGAirplaneMode' %}
+
+  {% when 'MonoDTGPinkCheck' %}
+  {% include 'FrmMonoDTGPinkCheck' %}
+
+  {% when 'MonoDTGPinkLV' %}
+  {% include 'FrmMonoDTGPinkLV' %}
+
+  {% when 'MonoDTGPumpPatch' %}
+  {% include 'FrmMonoDTGPumpPatch' %}
+
+  {% when 'MonoDTGMinnieJack' %}
+  {% include 'FrmMonoDTGMinnieJack' %}
+
+  {% when 'MonoDTGMIYGram' %}
+  {% include 'FrmMonoDTGMIYGram' %}
+
+  {% when 'MonoDTGMIYHearts' %}
+  {% include 'FrmMonoDTGMIYHearts' %} 
+
+  {% when 'MonoDTGMIYMama' %}
+  {% include 'FrmMonoDTGMIYMama' %}
+
+  {% when 'DTGAmericanFlag' %}
+  {% include 'FrmDTGAmericanFlag' %}
+
+  {% when 'DTGCaffDisney' %}
+  {% include 'FrmDTGCaffDisney' %}
+
+  {% when 'DTGCatNap' %}
+  {% include 'FrmDTGCatNap' %}
+
+  {% when 'DTGCofHelps' %}
+  {% include 'FrmDTGCofHelps' %}
+
+  {% when 'DTGDogsB4Dudes' %}
+  {% include 'FrmDTGDogsB4Dudes' %}
+
+  {% when 'DTGHolWreath' %}
+  {% include 'FrmDTGHolWreath' %}
+
+  {% when 'DTGMermaidAcdmy' %}
+  {% include 'FrmDTGMermaidAcdmy' %}
+
+  {% when 'DTGWedding' %}
+  {% include 'FrmDTGWedding' %}
+
+  {% when 'MonoDTG2020' %}
+  {% include 'FrmMonoDTG2020' %}
+
+  {% when 'MonoDTG90GirlFront' %}
+  {% include 'FrmMonoDTG90GirlFront' %}
+
+  {% when 'MonoDTG90sMama' %}
+  {% include 'FrmMonoDTG90sMama' %}
+
+  {% when 'MonoDTGAlabama' %}
+  {% include 'FrmMonoDTGAlabama' %}
+
+  {% when 'MonoDTGAlexa' %}
+  {% include 'FrmMonoDTGAlexa' %}
+
+  {% when 'MonoDTGAlexaFr' %}
+  {% include 'FrmMonoDTGAlexaFr' %}
+
+  {% when 'MonoDTGAllDay' %}
+  {% include 'FrmMonoDTGAllDay' %}
+
+  {% when 'MonoDTGALPride' %}
+  {% include 'FrmMonoDTGALPride' %}
+
+  {% when 'MonoDTGAmAm' %}
+  {% include 'FrmMonoDTGAmAm' %}
+
+  {% when 'MonoDTGAmazon' %}
+  {% include 'FrmMonoDTGAmazon' %}
+
+  {% when 'MonoDTGAmBeauty' %}
+  {% include 'FrmMonoDTGAmBeauty' %}
+
+  {% when 'MonoDTGAmerica' %}
+  {% include 'FrmMonoDTGAmerica' %}
+
+  {% when 'MonoDTGAmEst' %}
+  {% include 'FrmMonoDTGAmEst' %}
+
+  {% when 'MonoDTGAmore' %}
+  {% include 'FrmMonoDTGAmore' %}
+
+  {% when 'MonoDTGAnimal' %}
+  {% include 'FrmMonoDTGAnimal' %}
+
+  {% when 'MonoDTGAntiVDay' %}
+  {% include 'FrmMonoDTGAntiVDay' %}
+
+  {% when 'MonoDTGAsIf' %}
+  {% include 'FrmMonoDTGAsIf' %}
+
+  {% when 'MonoDTGAutumnsUp' %}
+  {% include 'FrmMonoDTGAutumnsUp' %}
+
+  {% when 'MonoDTGAutWreath' %}
+  {% include 'FrmMonoDTGAutWreath' %}
+
+  {% when 'MonoDTGBabes' %}
+  {% include 'FrmMonoDTGBabes' %}
+
+  {% when 'MonoDTGBabyCold' %}
+  {% include 'FrmMonoDTGBabyCold' %}
+
+  {% when 'MonoDTGBabySpice' %}
+  {% include 'FrmMonoDTGBabySpice' %}
+
+  {% when 'MonoDTGBakeCookies' %}
+  {% include 'FrmMonoDTGBakeCookies' %}
+
+  {% when 'MonoDTGBakeCrew' %}
+  {% include 'FrmMonoDTGBakeCrew' %}
+
+  {% when 'MonoDTGBarbieShop' %}
+  {% include 'FrmMonoDTGBarbieShop' %}
+
+  {% when 'MonoDTGBasicHeart' %}
+  {% include 'FrmMonoDTGBasicHeart' %}
+
+  {% when 'MonoDTGBDayBabe' %}
+  {% include 'FrmMonoDTGBDayBabe' %}
+
+  {% when 'MonoDTGBeachCord' %}
+  {% include 'FrmMonoDTGBeachCord' %}
+
+  {% when 'MonoDTGBeat' %}
+  {% include 'FrmMonoDTGBeat' %}
+
+  {% when 'MonoDTGBeatDrop' %}
+  {% include 'FrmMonoDTGBeatDrop' %}
+
+  {% when 'MonoDTGBeatles' %}
+  {% include 'FrmMonoDTGBeatles' %}
+
+  {% when 'MonoDTGBee' %}
+  {% include 'FrmMonoDTGBee' %}
+
+  {% when 'MonoDTGBeMine' %}
+  {% include 'FrmMonoDTGBeMine' %}
+
+  {% when 'MonoDTGBeginChris' %}
+  {% include 'FrmMonoDTGBeginChris' %}
+
+  {% when 'MonoDTGBigPrint' %}
+  {% include 'FrmMonoDTGBigPrint' %}
+
+  {% when 'MonoDTGBirthYay' %}
+  {% include 'FrmMonoDTGBirthYay' %}
+
+  {% when 'MonoDTGBlessed' %}
+  {% include 'FrmMonoDTGBlessed' %}
+
+  {% when 'MonoDTGBlkCamo' %}
+  {% include 'FrmMonoDTGBlkCamo' %}
+
+  {% when 'MonoDTGBlkFri' %}
+  {% include 'FrmMonoDTGBlkFri' %}
+
+  {% when 'MonoDTGBlkLep' %}
+  {% include 'FrmMonoDTGBlkLep' %}
+
+  {% when 'MonoDTGBlonde' %}
+  {% include 'FrmMonoDTGBlonde' %}
+
+  {% when 'MonoDTGBonfires' %}
+  {% include 'FrmMonoDTGBonfires' %}
+
+  {% when 'MonoDTGBoo' %}
+  {% include 'FrmMonoDTGBoo' %}
+
+  {% when 'DTGBookCoff' %}
+  {% include 'FrmDTGBookCoff' %}
+
+  {% when 'MonoDTGBooks' %}
+  {% include 'FrmMonoDTGBooks' %}
+
+  {% when 'MonoDTGBossBabe' %}
+  {% include 'FrmMonoDTGBossBabe' %}
+
+  {% when 'MonoDTGBrace' %}
+  {% include 'FrmMonoDTGBrace' %}
+
+  {% when 'MonoDTGBrewing' %}
+  {% include 'FrmMonoDTGBrewing' %}
+
+  {% when 'MonoDTGBright' %}
+  {% include 'FrmMonoDTGBright' %}
+
+  {% when 'MonoDTGBringMe' %}
+  {% include 'FrmMonoDTGBringMe' %}
+
+  {% when 'MonoDTGBroom' %}
+  {% include 'FrmMonoDTGBroom' %}
+
+  {% when 'MonoDTGBrun' %}
+  {% include 'FrmMonoDTGBrun' %}
+
+  {% when 'MonoDTGBrunchBubble' %}
+  {% include 'FrmMonoDTGBrunchBubble' %}
+
+  {% when 'MonoDTGBT' %}
+  {% include 'FrmMonoDTGBT' %}
+
+  {% when 'MonoDTGBuffalo' %}
+  {% include 'FrmMonoDTGBuffalo' %}
+
+  {% when 'MonoDTGBuffaloWall' %}
+  {% include 'FrmMonoDTGBuffaloWall' %}
+
+  {% when 'MonoDTGBunnyEars' %}
+  {% include 'FrmMonoDTGBunnyEars' %}
+
+  {% when 'MonoDTGBusy' %}
+  {% include 'FrmMonoDTGBusy' %}
+
+  {% when 'MonoDTGButterflies' %}
+  {% include 'FrmMonoDTGButterflies' %}
+
+  {% when 'MonoDTGCaffCheer' %}
+  {% include 'FrmMonoDTGCaffCheer' %}
+
+  {% when 'MonoDTGCaffKind' %}
+  {% include 'FrmMonoDTGCaffKind' %}
+
+  {% when 'MonoDTGCaffQueen' %}
+  {% include 'FrmMonoDTGCaffQueen' %}
+
+  {% when 'MonoDTGCafSips' %}
+  {% include 'FrmMonoDTGCafSips' %}
+
+  {% when 'MonoDTGCampfire' %}
+  {% include 'FrmMonoDTGCampfire' %}
+
+  {% when 'MonoDTGCandles' %}
+  {% include 'FrmMonoDTGCandles' %}
+
+  {% when 'MonoDTGCandyCorn' %}
+  {% include 'FrmMonoDTGCandyCorn' %}
+
+  {% when 'MonoDTGCandyHeart' %}
+  {% include 'FrmMonoDTGCandyHeart' %}
+
+  {% when 'MonoDTGCapp' %}
+  {% include 'FrmMonoDTGCapp' %}
+
+  {% when 'MonoDTGCarolina' %}
+  {% include 'FrmMonoDTGCarolina' %}
+
+  {% when 'MonoDTGCart' %}
+  {% include 'FrmMonoDTGCart' %}
+
+  {% when 'MonoDTGCasserole' %}
+  {% include 'FrmMonoDTGCasserole' %}
+
+  {% when 'MonoDTGCastleLife' %}
+  {% include 'FrmMonoDTGCastleLife' %}
+
+  {% when 'MonoDTGCatMama' %}
+  {% include 'FrmMonoDTGCatMama' %}
+
+  {% when 'MonoDTGCaturday' %}
+  {% include 'FrmMonoDTGCaturday' %}
+
+  {% when 'MonoDTGChampBottles' %}
+  {% include 'FrmMonoDTGChampBottles' %}
+
+  {% when 'MonoDTGChampVibes' %}
+  {% include 'FrmMonoDTGChampVibes' %}
+
+  {% when 'MonoDTGChaos' %}
+  {% include 'FrmMonoDTGChaos' %}
+
+  {% when 'MonoDTGCharleston' %}
+  {% include 'FrmMonoDTGCharleston' %}
+   
+  {% when 'MonoDTGCharlie' %}
+  {% include 'FrmMonoDTGCharlie' %}
+
+  {% when 'MonoDTGCharlieXMas' %}
+  {% include 'FrmMonoDTGCharlieXMas' %}
+
+  {% when 'MonoDTGCheers' %}
+  {% include 'FrmMonoDTGCheers' %}
+
+  {% when 'MonoDTGCheckPhone' %}
+  {% include 'FrmMonoDTGCheckPhone' %}
+
+  {% when 'MonoDTGCheckPencil' %}
+  {% include 'FrmMonoDTGCheckPencil' %}
+
+  {% when 'MonoDTGCherries' %}
+  {% include 'FrmMonoDTGCherries' %}
+
+  {% when 'MonoDTGChickFav' %}
+  {% include 'FrmMonoDTGChickFav' %}
+
+  {% when 'MonoDTGChickfilyay' %}
+  {% include 'FrmMonoDTGChickfilyay' %}
+
+  {% when 'MonoDTGChLights' %}
+  {% include 'FrmMonoDTGChLights' %}
+
+  {% when 'MonoDTGChocMovies' %}
+  {% include 'FrmMonoDTGChocMovies' %}
+
+  {% when 'MonoDTGChrisStory' %}
+  {% include 'FrmMonoDTGChrisStory' %}
+
+  {% when 'MonoDTGClemson' %}
+  {% include 'FrmMonoDTGClemson' %}
+
+  {% when 'MonoDTGCocoa' %}
+  {% include 'FrmMonoDTGCocoa' %}
+
+  {% when 'MonoDTGCocoNet' %}
+  {% include 'FrmMonoDTGCocoNet' %}
+
+  {% when 'MonoDTGCoffChamp' %}
+  {% include 'FrmMonoDTGCoffChamp' %}
+
+  {% when 'MonoDTGCoffeeCord' %}
+  {% include 'FrmMonoDTGCoffeeCord' %}
+
+  {% when 'MonoDTGCoffeeLove' %}
+  {% include 'FrmMonoDTGCoffeeLove' %}
+
+  {% when 'MonoDTGCoffeeVal' %}
+  {% include 'FrmMonoDTGCoffeeVal' %}
+
+  {% when 'MonoDTGCoffHeart' %}
+  {% include 'FrmMonoDTGCoffHeart' %}
+
+  {% when 'MonoDTGCoffLipstk' %}
+  {% include 'FrmMonoDTGCoffLipstk' %}
+
+  {% when 'MonoDTGCoffNurse' %}
+  {% include 'FrmMonoDTGCoffNurse' %}
+
+  {% when 'MonoDTGCoffTeach' %}
+  {% include 'FrmMonoDTGCoffTeach' %}
+
+  {% when 'MonoDTGCofLover' %}
+  {% include 'FrmMonoDTGCofLover' %}
+
+  {% when 'MonoDTGCofMusic' %}
+  {% include 'FrmMonoDTGCofMusic' %}
+
+  {% when 'MonoDTGColorFish' %}
+  {% include 'FrmMonoDTGColorFish' %}
+
+  {% when 'MonoDTGColorLights' %}
+  {% include 'FrmMonoDTGColorLights' %}
+
+  {% when 'MonoDTGColorRain' %}
+  {% include 'FrmMonoDTGColorRain' %}
+
+  {% when 'MonoDTGColorWhale' %}
+  {% include 'FrmMonoDTGColorWhale' %}
+
+  {% when 'MonoDTGCoolMomEst' %}
+  {% include 'FrmMonoDTGCoolMomEst' %}
+
+  {% when 'MonoDTGCoolMom' %}
+  {% include 'FrmMonoDTGCoolMom' %}
+
+  {% when 'MonoDTGCowgirl' %}
+  {% include 'FrmMonoDTGCowgirl' %}
+
+  {% when 'MonoDTGCozy' %}
+  {% include 'FrmMonoDTGCozy' %}
+
+  {% when 'MonoDTGCozyCoff' %}
+  {% include 'FrmMonoDTGCozyCoff' %}
+
+  {% when 'MonoDTGCozySeas' %}
+  {% include 'FrmMonoDTGCozySeas' %}
+
+  {% when 'MonoDTGCPlaid' %}
+  {% include 'FrmMonoDTGCPlaid' %}
+
+  {% when 'MonoDTGCrayon' %}
+  {% include 'FrmMonoDTGCrayon' %}
+
+  {% when 'MonoDTGCrew' %}
+  {% include 'FrmMonoDTGCrew' %}
+
+  {% when 'MonoDTGCrime' %}
+  {% include 'FrmMonoDTGCrime' %}
+
+  {% when 'MonoDTGCupid' %}
+  {% include 'FrmMonoDTGCupid' %}
+
+  {% when 'MonoDTGDash' %}
+  {% include 'FrmMonoDTGDash' %}
+
+  {% when 'MonoDTGDays' %}
+  {% include 'FrmMonoDTGDays' %}
+
+  {% when 'MonoDTGDearSanta' %}
+  {% include 'FrmMonoDTGDearSanta' %}
+
+  {% when 'MonoDTGDeck' %}
+  {% include 'FrmMonoDTGDeck' %}
+
+  {% when 'MonoDTGDeckHalls' %}
+  {% include 'FrmMonoDTGDeckHalls' %}
+
+  {% when 'MonoDTGDef' %}
+  {% include 'FrmMonoDTGDef' %}
+
+  {% when 'MonoDTGDentFront' %}
+  {% include 'FrmMonoDTGDentFront' %}
+
+  {% when 'MonoDTGDesert' %}
+  {% include 'FrmMonoDTGDesert' %}
+
+  {% when 'MonoDTGDietCoke' %}
+  {% include 'FrmMonoDTGDietCoke' %}
+
+  {% when 'MonoDTGDisHall' %}
+  {% include 'FrmMonoDTGDisHall' %}
+
+  {% when 'MonoDTGDisBDay' %}
+  {% include 'FrmMonoDTGDisBDay' %}
+
+  {% when 'MonoDTGDisChris' %}
+  {% include 'FrmMonoDTGDisChris' %}
+
+  {% when 'MonoDTGDisDreamer' %}
+  {% include 'FrmMonoDTGDisDreamer' %}
+
+  {% when 'MonoDTGDisFront' %}
+  {% include 'FrmMonoDTGDisFront' %}
+
+  {% when 'MonoDTGDisHolidays' %}
+  {% include 'FrmMonoDTGDisHolidays' %}
+
+  {% when 'MonoDTGDisneyDays' %}
+  {% include 'FrmMonoDTGDisneyDays' %}
+
+  {% when 'MonoDTGDisneyFall' %}
+  {% include 'FrmMonoDTGDisneyFall' %}
+
+  {% when 'MonoDTGDisneyPeeps' %}
+  {% include 'FrmMonoDTGDisneyPeeps' %}
+
+  {% when 'MonoDTGDistLep' %}
+  {% include 'FrmMonoDTGDistLep' %}
+
+  {% when 'MonoDTGDixie' %}
+  {% include 'FrmMonoDTGDixie' %}
+
+  {% when 'MonoDTGDogMama' %}
+  {% include 'FrmMonoDTGDogMom' %}
+
+  {% when 'MonoDTGDogMom' %}
+  {% include 'FrmMonoDTGDogMom' %}
+
+  {% when 'MonoDTGDogMom2' %}
+  {% include 'FrmMonoDTGDogMom2' %}
+
+  {% when 'MonoDTGDogMomFr' %}
+  {% include 'FrmMonoDTGDogMomFr' %}
+
+  {% when 'MonoDTGDogMoth' %}
+  {% include 'FrmMonoDTGDogMoth' %}
+
+  {% when 'MonoDTGDogsCord' %}
+  {% include 'FrmMonoDTGDogsCord' %}
+
+  {% when 'MonoDTGDogVal' %}
+  {% include 'FrmMonoDTGDogVal' %}
+
+  {% when 'MonoDTGDonut' %}
+  {% include 'FrmMonoDTGDonut' %}
+
+  {% when 'MonoDTGDoodles' %}
+  {% include 'FrmMonoDTGDoodles' %}
+
+  {% when 'MonoDTGDownSouth' %}
+  {% include 'FrmMonoDTGDownSouth' %}
+
+  {% when 'MonoDTGDrinkHC' %}
+  {% include 'FrmMonoDTGDrinkHC' %}
+
+  {% when 'MonoDTGDunkin' %}
+  {% include 'FrmMonoDTGDunkin' %}
+
+  {% when 'MonoDTGEastWreath' %}
+  {% include 'FrmMonoDTGEastWreath' %}
+
+  {% when 'MonoDTGEasyLem' %}
+  {% include 'FrmMonoDTGEasyLem' %}
+
+  {% when 'MonoDTGEggstra' %}
+  {% include 'FrmMonoDTGEggstra' %}
+
+  {% when 'MonoDTGElf' %}
+  {% include 'FrmMonoDTGElf' %}
+
+  {% when 'MonoDTGElfMovie' %}
+  {% include 'FrmMonoDTGElfMovie' %}
+
+  {% when 'MonoDTGExplore' %}
+  {% include 'FrmMonoDTGExplore' %}
+
+  {% when 'MonoDTGFaLatte' %}
+  {% include 'FrmMonoDTGFaLatte' %}
+
+  {% when 'MonoDTGFallFav' %}
+  {% include 'FrmMonoDTGFallFav' %}
+
+  {% when 'MonoDTGFallHeart' %}
+  {% include 'FrmMonoDTGFallHeart' %}
+
+  {% when 'MonoDTGFallVibes' %}
+  {% include 'FrmMonoDTGFallVibes' %}
+
+  {% when 'MonoDTGFallWon' %}
+  {% include 'FrmMonoDTGFallWon' %}
+
+  {% when 'MonoDTGFallYall' %}
+  {% include 'FrmMonoDTGFallYall' %}
+
+  {% when 'MonoDTGFavFlav' %}
+  {% include 'FrmMonoDTGFavFlav' %}
+
+  {% when 'MonoDTGFavLilly' %}
+  {% include 'FrmMonoDTGFavLilly' %}
+
+  {% when 'MonoDTGFavTime' %}
+  {% include 'FrmMonoDTGFavTime' %}
+
+  {% when 'MonoDTGFeelin' %}
+  {% include 'FrmMonoDTGFeelin' %}
+
+  {% when 'MonoDTGFestiveAF' %}
+  {% include 'FrmMonoDTGFestiveAF' %}
+
+  {% when 'MonoDTGFierce' %}
+  {% include 'FrmMonoDTGFierce' %}
+
+  {% when 'MonoDTGFilthy' %}
+  {% include 'FrmMonoDTGFilthy' %}
+
+  {% when 'MonoDTGFireworks' %}
+  {% include 'FrmMonoDTGFireworks' %}
+
+  {% when 'MonoDTGFirstCoffee' %}
+  {% include 'FrmMonoDTGFirstCoffee' %}
+
+  {% when 'MonoDTGFirstIceCof' %}
+  {% include 'FrmMonoDTGFirstIceCof' %}
+
+  {% when 'MonoDTGFlag' %}
+  {% include 'FrmMonoDTGFlag' %}
+
+  {% when 'MonoDTGFlagTong' %}
+  {% include 'FrmMonoDTGFlagTong' %}
+
+  {% when 'MonoDTGFlamingo' %}
+  {% include 'FrmMonoDTGFlamingo' %}
+
+  {% when 'MonoDTGFlannLatt' %}
+  {% include 'FrmMonoDTGFlannLatt' %}
+
+  {% when 'MonoDTGFlockin' %}
+  {% include 'FrmMonoDTGFlockin' %}
+
+  {% when 'MonoDTGFootballNumb' %}
+  {% include 'FrmMonoDTGFootballNumb' %}
+
+  {% when 'MonoDTGFLPride' %}
+  {% include 'FrmMonoDTGFLPride' %}
+
+  {% when 'MonoDTGFlwrCamera' %}
+  {% include 'FrmMonoDTGFlwrCamera' %}
+
+  {% when 'MonoDTGFourthJuly' %}
+  {% include 'FrmMonoDTGFourthJuly' %}
+
+  {% when 'MonoDTGFreakVal' %}
+  {% include 'FrmMonoDTGFreakVal' %}
+
+  {% when 'MonoDTGFresh' %}
+  {% include 'FrmMonoDTGFresh' %}
+
+  {% when 'MonoDTGFriday' %}
+  {% include 'FrmMonoDTGFriday' %}
+
+  {% when 'MonoDTGFriends' %}
+  {% include 'FrmMonoDTGFriends' %}
+
+  {% when 'MonoDTGFriendsTurk' %}
+  {% include 'FrmMonoDTGFriendsTurk' %}
+
+  {% when 'MonoDTGFrontPrint' %}
+  {% include 'FrmMonoDTGFrontPrint' %}
+
+  {% when 'MonoDTGFurMama' %}
+  {% include 'FrmMonoDTGFurMama' %}
+
+  {% when 'MonoDTGGalGang' %}
+  {% include 'FrmMonoDTGGalGang' %}
+
+  {% when 'MonoDTGGameDay' %}
+  {% include 'FrmMonoDTGGameDay' %}
+
+  {% when 'MonoDTGGAPride' %}
+  {% include 'FrmMonoDTGGAPride' %}
+
+  {% when 'MonoDTGGerms' %}
+  {% include 'FrmMonoDTGGerms' %}
+
+  {% when 'MonoDTGGhoul' %}
+  {% include 'FrmMonoDTGGhoul' %}
+
+  {% when 'MonoDTGGingerbread' %}
+  {% include 'FrmMonoDTGGingerbread' %}
+
+  {% when 'MonoDTGGirlBoss' %}
+  {% include 'FrmMonoDTGGirlBoss' %}
+
+  {% when 'MonoDTGGirlPower' %}
+  {% include 'FrmMonoDTGGirlPower' %}
+
+  {% when 'MonoDTGGirlPwr' %}
+  {% include 'FrmMonoDTGGirlPwr' %}
+
+  {% when 'MonoDTGGirlsRule' %}
+  {% include 'FrmMonoDTGGirlsRule' %}
+
+  {% when 'MonoDTGGirlsWeek' %}
+  {% include 'FrmMonoDTGGirlsWeek' %}
+
+  {% when 'MonoDTGGlasses' %}
+  {% include 'FrmMonoDTGGlasses' %}
+
+  {% when 'MonoDTGGlitter' %}
+  {% include 'FrmMonoDTGGlitter' %}
+
+  {% when 'MonoDTGGnome' %}
+  {% include 'FrmMonoDTGGnome' %}
+
+  {% when 'MonoDTGGobble' %}
+  {% include 'FrmMonoDTGGobble' %}
+
+  {% when 'MonoDTGGolden' %}
+  {% include 'FrmMonoDTGGolden' %}
+
+  {% when 'MonoDTGGoLucky' %}
+  {% include 'FrmMonoDTGGoLucky' %}
+
+  {% when 'MonoDTGGoodVibes' %}
+  {% include 'FrmMonoDTGGoodVibes' %}
+
+  {% when 'MonoDTGGreenCamo' %}
+  {% include 'FrmMonoDTGGreenCamo' %}
+
+  {% when 'MonoDTGGrinch' %}
+  {% include 'FrmMonoDTGGrinch' %}
+
+  {% when 'MonoDTGGrowGirl' %}
+  {% include 'FrmMonoDTGGrowGirl' %}
+
+  {% when 'MonoDTGGucciAm' %}
+  {% include 'FrmMonoDTGGucciAm' %}
+
+  {% when 'MonoDTGGucciCoffee' %}
+  {% include 'FrmMonoDTGGucciCoffee' %}
+
+  {% when 'MonoDTGGucciDis' %}
+  {% include 'FrmMonoDTGGucciDis' %}
+
+  {% when 'MonoDTGGucciFest' %}
+  {% include 'FrmMonoDTGGucciFest' %}
+
+  {% when 'MonoDTGGucciMama' %}
+  {% include 'FrmMonoDTGGucciMama' %}
+
+  {% when 'MonoDTGGucciMini' %}
+  {% include 'FrmMonoDTGGucciMini' %}
+
+  {% when 'MonoDTGGucciMIY' %}
+  {% include 'FrmMonoDTGGucciMIY' %}
+
+  {% when 'MonoDTGGuitar' %}
+  {% include 'FrmMonoDTGGuitar' %}
+
+  {% when 'MonoDTGHallmark' %}
+  {% include 'FrmMonoDTGHallmark' %}
+
+  {% when 'MonoDTGHanukkah' %}
+  {% include 'FrmMonoDTGHanukkah' %}
+
+  {% when 'MonoDTGHapCup' %}
+  {% include 'FrmMonoDTGHapCup' %}
+
+  {% when 'MonoDTGHapFall' %}
+  {% include 'FrmMonoDTGHapFall' %}
+
+  {% when 'MonoDTGHappiest' %}
+  {% include 'FrmMonoDTGHappiest' %}
+
+  {% when 'MonoDTGHappily' %}
+  {% include 'FrmMonoDTGHappily' %}
+
+  {% when 'MonoDTGHarvest' %}
+  {% include 'FrmMonoDTGHarvest' %}
+
+  {% when 'MonoDTGHeartCheck' %}
+  {% include 'FrmMonoDTGHeartCheck' %}
+
+  {% when 'MonoDTGHeartCoffee' %}
+  {% include 'FrmMonoDTGHeartCoffee' %}
+
+  {% when 'MonoDTGHelFalFront' %}
+  {% include 'FrmMonoDTGHelFalFront' %}
+
+  {% when 'MonoDTGHelloFall' %}
+  {% include 'FrmMonoDTGHelloFall' %} 
+
+  {% when 'Mono101MHelloTag' %}
+  {% include 'FrmMono101MHelloTag' %}
+
+  {% when 'MonoDTGHelloPump' %}
+  {% include 'FrmMonoDTGHelloPump' %}
+
+  {% when 'MonoDTGHelloWinter' %}
+  {% include 'FrmMonoDTGHelloWinter' %}
+
+  {% when 'MonoDTGHocPoc' %}
+  {% include 'FrmMonoDTGHocPoc' %}
+
+  {% when 'MonoDTGHolidayWon' %}
+  {% include 'FrmMonoDTGHolidayWon' %}
+
+  {% when 'MonoDTGHomebody' %}
+  {% include 'FrmMonoDTGHomebody' %}
+
+  {% when 'MonoDTGHomeCastle' %}
+  {% include 'FrmMonoDTGHomeCastle' %}
+
+  {% when 'MonoDTGHomeEars' %}
+  {% include 'FrmMonoDTGHomeEars' %}
+
+  {% when 'MonoDTGHomeHolFront' %}
+  {% include 'FrmMonoDTGHomeHolFront' %}
+
+  {% when 'MonoDTGHoney' %}
+  {% include 'FrmMonoDTGHoney' %}
+
+  {% when 'MonoDTGHos' %}
+  {% include 'FrmMonoDTGHos' %}
+
+  {% when 'MonoDTGHotDog' %}
+  {% include 'FrmMonoDTGHotDog' %}
+
+  {% when 'MonoDTGHotDog2' %}
+  {% include 'FrmMonoDTGHotDog2' %}
+
+  {% when 'MonoDTGHowdy' %}
+  {% include 'FrmMonoDTGHowdy' %}
+
+  {% when 'MonoDTGIcedQueen' %}
+  {% include 'FrmMonoDTGIcedQueen' %}
+
+  {% when 'MonoDTGIcedSeason' %}
+  {% include 'FrmMonoDTGIcedSeason' %}
+
+  {% when 'MonoDTGIndoorsy' %}
+  {% include 'FrmMonoDTGIndoorsy' %}
+
+  {% when 'MonoDTGIrishFlag' %}
+  {% include 'FrmMonoDTGIrishFlag' %}
+
+  {% when 'MonoDTGJack' %}
+  {% include 'FrmMonoDTGJack' %}
+
+  {% when 'MonoDTGJetLag' %}
+  {% include 'FrmMonoDTGJetLag' %}
+
+  {% when 'MonoDTGJolly' %}
+  {% include 'FrmMonoDTGJolly' %}
+
+  {% when 'MonoDTGJoy' %}
+  {% include 'FrmMonoDTGJoy' %}
+
+  {% when 'MonoDTGJustChill' %}
+  {% include 'FrmMonoDTGJustChill' %}
+
+  {% when 'MonoDTGKeySurv' %}
+  {% include 'FrmMonoDTGKeySurv' %}
+
+  {% when 'MonoDTGLattes' %}
+  {% include 'FrmMonoDTGLattes' %}
+
+  {% when 'MonoDTGLeavesFr' %}
+  {% include 'FrmMonoDTGLeavesFr' %}
+
+  {% when 'MonoDTGLeftovers' %}
+  {% include 'FrmMonoDTGLeftovers' %}
+
+  {% when 'MonoDTGLeopard' %}
+  {% include 'FrmMonoDTGLeopard' %}
+
+  {% when 'MonoDTGLepLove' %}
+  {% include 'FrmMonoDTGLepLove' %}
+
+  {% when 'MonoDTGLepMinnie' %}
+  {% include 'FrmMonoDTGLepMinnie' %}
+
+  {% when 'MonoDTGLepPump' %}
+  {% include 'FrmMonoDTGLepPump' %}
+
+  {% when 'MonoDTGLepRain' %}
+  {% include 'FrmMonoDTGLepRain' %}
+
+  {% when 'MonoDTGLepSham' %}
+  {% include 'FrmMonoDTGLepSham' %}
+
+  {% when 'MonoDTGLepSmiley' %}
+  {% include 'FrmMonoDTGLepSmiley' %}
+
+  {% when 'MonoDTGLepTeach' %}
+  {% include 'FrmMonoDTGLepTeach' %}
+
+  {% when 'MonoDTGLepXOXO' %}
+  {% include 'FrmMonoDTGLepXOXO' %}
+
+  {% when 'MonoDTGLessTroubles' %}
+  {% include 'FrmMonoDTGLessTroubles' %}
+
+  {% when 'MonoDTGLFBack' %}
+  {% include 'FrmMonoDTGLFBack' %}
+
+  {% when 'MonoDTGLFPencil' %}
+  {% include 'FrmMonoDTGLFPencil' %}
+
+  {% when 'MonoDTGLifeSpark' %}
+  {% include 'FrmMonoDTGLifeSpark' %}
+
+  {% when 'MonoDTGLillyFlag' %}
+  {% include 'FrmMonoDTGLillyFlag' %}
+
+  {% when 'MonoDTGLillyMinn' %}
+  {% include 'FrmMonoDTGLillyMinn' %}
+
+  {% when 'MonoDTGLillyPlaid' %}
+  {% include 'FrmMonoDTGLillyPlaid' %}
+
+  {% when 'MonoDTGLilMer' %}
+  {% include 'FrmMonoDTGLilMer' %}
+
+  {% when 'MonoDTGLipQueen' %}
+  {% include 'FrmMonoDTGLipQueen' %}
+
+  {% when 'MonoDTGLipstick' %}
+  {% include 'FrmMonoDTGLipstick' %}
+
+  {% when 'MonoDTGLizzie' %}
+  {% include 'FrmMonoDTGLizzie' %}
+
+  {% when 'MonoDTGLlama' %}
+  {% include 'FrmMonoDTGLlama' %}
+
+  {% when 'MonoDTGLotsLove' %}
+  {% include 'FrmMonoDTGLotsLove' %}
+
+  {% when 'MonoDTGLoveCoffee' %}
+  {% include 'FrmMonoDTGLoveCoffee' %}
+
+  {% when 'MonoDTGLoveFall' %}
+  {% include 'FrmMonoDTGLoveFall' %}
+
+  {% when 'MonoDTGLoveMick' %}
+  {% include 'FrmMonoDTGLoveMick' %}
+
+  {% when 'MonoDTGLoveLatte' %}
+  {% include 'FrmMonoDTGLoveLatte' %}
+
+  {% when 'MonoDTGLovers' %}
+  {% include 'FrmMonoDTGLovers' %}
+
+  {% when 'MonoDTGLoveXMas' %}
+  {% include 'FrmMonoDTGLoveXMas' %}
+
+  {% when 'MonoDTGLuckRain' %}
+  {% include 'FrmMonoDTGLuckRain' %}
+
+  {% when 'MonoDTGLuckSmiley' %}
+  {% include 'FrmMonoDTGLuckSmiley' %}
+
+  {% when 'MonoDTGLuckyMama' %}
+  {% include 'FrmMonoDTGLuckyMama' %}
+
+  {% when 'MonoDTGLuckyMini' %}
+  {% include 'FrmMonoDTGLuckyMini' %}
+
+  {% when 'MonoDTGLV' %}
+  {% include 'FrmMonoDTGLV' %}
+
+  {% when 'MonoDTGLVBlock' %}
+  {% include 'FrmMonoDTGLVBlock' %}
+
+  {% when 'MonoDTGLVCheck' %}
+  {% include 'FrmMonoDTGLVCheck' %}
+
+  {% when 'MonoDTGLVGrinch' %}
+  {% include 'FrmMonoDTGLVGrinch' %}
+
+  {% when 'MonoDTGLVMinnie' %}
+  {% include 'FrmMonoDTGLVMinnie' %}
+
+  {% when 'MonoDTGLVXMas' %}
+  {% include 'FrmMonoDTGLVXMas' %}
+
+  {% when 'MonoDTGMade80s' %}
+  {% include 'FrmMonoDTGMade80s' %}
+
+  {% when 'MonoDTGMagicalDay' %}
+  {% include 'FrmMonoDTGMagicalDay' %}
+
+  {% when 'MonoDTGMain' %}
+  {% include 'FrmMonoDTGMain' %}
+
+  {% when 'MonoDTGMakeupTree' %}
+  {% include 'FrmMonoDTGMakeupTree' %}
+
+  {% when 'MonoDTGMamaHeart' %}
+  {% include 'FrmMonoDTGMamaHeart' %}
+
+  {% when 'MonoDTGMamaLife' %}
+  {% include 'FrmMonoDTGMamaLife' %}
+
+  {% when 'MonoDTGMamaNeeds' %}
+  {% include 'FrmMonoDTGMamaNeeds' %}
+
+  {% when 'MonoDTGMamaRain' %}
+  {% include 'FrmMonoDTGMamaRain' %}
+
+  {% when 'MonoDTGMargarita' %}
+  {% include 'FrmMonoDTGMargarita' %}
+
+  {% when 'MonoDTGMartinis' %}
+  {% include 'FrmMonoDTGMartinis' %}
+
+  {% when 'MonoDTGMelonBig' %}
+  {% include 'FrmMonoDTGMelonBig' %}
+
+  {% when 'MonoDTGMeow' %}
+  {% include 'FrmMonoDTGMeow' %}
+
+  {% when 'MonoDTGMerryFlam' %}
+  {% include 'FrmMonoDTGMerryFlam' %}
+
+  {% when 'MonoDTGMerryMama' %}
+  {% include 'FrmMonoDTGMerryMama' %}
+
+  {% when 'MonoDTGMerryMist' %}
+  {% include 'FrmMonoDTGMerryMist' %}
+
+  {% when 'MonoDTGMerryRed' %}
+  {% include 'FrmMonoDTGMerryRed' %}
+
+  {% when 'MonoDTGMerryXMas' %}
+  {% include 'FrmMonoDTGMerryXMas' %}
+
+  {% when 'MonoDTGMessBun' %}
+  {% include 'FrmMonoDTGMessBun' %}
+
+  {% when 'MonoDTGMickCookies' %}
+  {% include 'FrmMonoDTGMickCookies' %}
+
+  {% when 'MonoDTGMickeySnacks' %}
+  {% include 'FrmMonoDTGMickeySnacks' %}
+
+  {% when 'MonoDTGMickeyV' %}
+  {% include 'FrmMonoDTGMickeyV' %}
+
+  {% when 'MonoDTGCNavy' %}
+  {% include 'FrmMonoDTGCNavy' %}
+
+  {% when 'MonoDTGMickHall' %}
+  {% include 'FrmMonoDTGMickHall' %}
+
+  {% when 'MonoDTGMickSkelly' %}
+  {% include 'FrmMonoDTGMickSkelly' %}
+
+  {% when 'MonoDTGMickTrees' %}
+  {% include 'FrmMonoDTGMickTrees' %}
+
+  {% when 'MonoDTGMickVal' %}
+  {% include 'FrmMonoDTGMickVal' %}
+
+  {% when 'MonoDTGMickWreath' %}
+  {% include 'FrmMonoDTGMickWreath' %}
+
+  {% when 'MonoDTGMidnight' %}
+  {% include 'FrmMonoDTGMidnight' %}
+
+  {% when 'MonoDTGMimosas' %}
+  {% include 'FrmMonoDTGMimosas' %}
+
+  {% when 'MonoDTGMiniHeart' %}
+  {% include 'FrmMonoDTGMiniHeart' %}
+
+  {% when 'MonoDTGMiniRain' %}
+  {% include 'FrmMonoDTGMiniRain' %}
+
+  {% when 'MonoDTGMinMouse' %}
+  {% include 'FrmMonoDTGMinMouse' %}
+
+  {% when 'MonoDTGMinnDeer' %}
+  {% include 'FrmMonoDTGMinnDeer' %}
+
+  {% when 'MonoDTGMinnieBest' %}
+  {% include 'FrmMonoDTGMinnieBest' %}
+
+  {% when 'MonoDTGMinnScarf' %}
+  {% include 'FrmMonoDTGMinnScarf' %}
+
+  {% when 'MonoDTGMomLife' %}
+  {% include 'FrmMonoDTGMomLife' %}
+
+  {% when 'MonoDTGMomPwr' %}
+  {% include 'FrmMonoDTGMomPwr' %}
+
+  {% when 'MonoDTGMouseLove' %}
+  {% include 'FrmMonoDTGMouseLove' %}
+
+  {% when 'MonoDTGMovieWatch' %}
+  {% include 'FrmMonoDTGMovieWatch' %}
+
+  {% when 'MonoDTGNapFront' %}
+  {% include 'FrmMonoDTGNapFront' %}
+
+  {% when 'MonoDTGNCPride' %}
+  {% include 'FrmMonoDTGNCPride' %}
+
+  {% when 'MonoDTGNeedCoffee' %}
+  {% include 'FrmMonoDTGNeedCoffee' %}
+
+  {% when 'MonoDTGNeonMoon' %}
+  {% include 'FrmMonoDTGNeonMoon' %}
+
+  {% when 'MonoDTGNevGrowUp' %}
+  {% include 'FrmMonoDTGNevGrowUp' %}
+
+  {% when 'MonoDTGNirvana' %}
+  {% include 'FrmMonoDTGNirvana' %}
+
+  {% when 'MonoDTGNoCoffee' %}
+  {% include 'FrmMonoDTGNoCoffee' %}
+
+  {% when 'MonoDTGNurseBlock' %}
+  {% include 'FrmMonoDTGNurseBlock' %}
+
+  {% when 'MonoDTGNurseFront' %}
+  {% include 'FrmMonoDTGNurseFront' %}
+
+  {% when 'MonoDTGNurseLove' %}
+  {% include 'FrmMonoDTGNurseLove' %}
+
+  {% when 'MonoDTGNurseMin' %}
+  {% include 'FrmMonoDTGNurseMin' %}
+
+  {% when 'MonoDTGNurseVibes' %}
+  {% include 'FrmMonoDTGNurseVibes' %}
+
+  {% when 'MonoDTGNutcrackers' %}
+  {% include 'FrmMonoDTGNutcrackers' %}
+
+  {% when 'MonoDTGOffDuty' %}
+  {% include 'FrmMonoDTGOffDuty' %}
+
+  {% when 'MonoDTGOffice' %}
+  {% include 'FrmMonoDTGOffice' %}
+
+  {% when 'MonoDTGOldCocoa' %}
+  {% include 'FrmMonoDTGOldCocoa' %}
+
+  {% when 'MonoDTGOmbre' %}
+  {% include 'FrmMonoDTGOmbre' %}
+
+  {% when 'MonoDTGOnline' %}
+  {% include 'FrmMonoDTGOnline' %}
+
+  {% when 'MonoDTGOrna' %}
+  {% include 'FrmMonoDTGOrna' %}
+
+  {% when 'MonoDTGOT' %}
+  {% include 'FrmMonoDTGOT' %}
+
+  {% when 'MonoDTGPalm' %}
+  {% include 'FrmMonoDTGPalm' %}
+
+  {% when 'MonoDTGPalmFlag' %}
+  {% include 'FrmMonoDTGPalmFlag' %}
+
+  {% when 'MonoDTGParis' %}
+  {% include 'FrmMonoDTGParis' %}
+
+  {% when 'MonoDTGPatBow' %}
+  {% include 'FrmMonoDTGPatBow' %}
+
+  {% when 'MonoDTGPatch' %}
+  {% include 'FrmMonoDTGPatch' %}
+
+  {% when 'MonoDTGPatPine' %}
+  {% include 'FrmMonoDTGPatPine' %}
+
+  {% when 'MonoDTGPatProud' %}
+  {% include 'FrmMonoDTGPatProud' %}
+
+  {% when 'MonoDTGPawsFront' %}
+  {% include 'FrmMonoDTGPawsFront' %}
+
+  {% when 'MonoDTGPeaceJoy' %}
+  {% include 'FrmMonoDTGPeaceJoy' %}
+
+  {% when 'MonoDTGPeacePump' %}
+  {% include 'FrmMonoDTGPeacePump' %}
+
+  {% when 'MonoDTGPeaches' %}
+  {% include 'FrmMonoDTGPeaches' %}
+
+  {% when 'MonoDTGPenguin' %}
+  {% include 'FrmMonoDTGPenguin' %}
+
+  {% when 'MonoDTGPerk' %}
+  {% include 'FrmMonoDTGPerk' %}
+
+  {% when 'MonoDTGPie' %}
+  {% include 'FrmMonoDTGPie' %}
+
+  {% when 'MonoDTGPizzaLove' %}
+  {% include 'FrmMonoDTGPizzaLove' %}
+
+  {% when 'MonoDTGPlaid' %}
+  {% include 'FrmMonoDTGPlaid' %}
+
+  {% when 'MonoDTGPlaidMug' %}
+  {% include 'FrmMonoDTGPlaidMug' %}
+
+  {% when 'MonoDTGPlaidPumps' %}
+  {% include 'FrmMonoDTGPlaidPumps' %}
+
+  {% when 'MonoDTGPlantMom' %}
+  {% include 'FrmMonoDTGPlantMom' %}
+
+  {% when 'MonoDTGPleaseBring' %}
+  {% include 'FrmMonoDTGPleaseBring' %}
+
+  {% when 'MonoDTGPluto' %}
+  {% include 'FrmMonoDTGPluto' %}
+
+  {% when 'MonoDTGPodcasts' %}
+  {% include 'FrmMonoDTGPodcasts' %}
+
+  {% when 'MonoDTGPopChamp' %}
+  {% include 'FrmMonoDTGPopChamp' %}
+
+  {% when 'MonoDTGPopCheers' %}
+  {% include 'FrmMonoDTGPopCheers' %}
+
+  {% when 'MonoDTGPopFizz' %}
+  {% include 'FrmMonoDTGPopFizz' %}
+
+  {% when 'MonoDTGPotter' %}
+  {% include 'FrmMonoDTGPotter' %}
+
+  {% when 'MonoDTGPres' %}
+  {% include 'FrmMonoDTGPres' %}
+
+  {% when 'MonoDTGPrincess' %}
+  {% include 'FrmMonoDTGPrincess' %}
+
+  {% when 'MonoDTGProseco' %}
+  {% include 'FrmMonoDTGProseco' %}
+
+  {% when 'MonoDTGPSFront' %}
+  {% include 'FrmMonoDTGPSFront' %}
+
+  {% when 'MonoDTGPSL' %}
+  {% include 'FrmMonoDTGPSL' %}
+
+  {% when 'MonoDTGPSpicePlease' %}
+  {% include 'FrmMonoDTGPSpicePlease' %}
+
+  {% when 'MonoDTGPT' %}
+  {% include 'FrmMonoDTGPT' %}
+
+  {% when 'MonoDTGPumpCoffee' %}
+  {% include 'FrmMonoDTGPumpCoffee' %}
+
+  {% when 'MonoDTGPumpEvery' %}
+  {% include 'FrmMonoDTGPumpEvery' %}
+
+  {% when 'MonoDTGPumpkin' %}
+  {% include 'FrmMonoDTGPumpkin' %}
+
+  {% when 'MonoDTGPumpSpQueen' %}
+  {% include 'FrmMonoDTGPumpSpQueen' %}
+
+  {% when 'MonoDTGPumpSZN' %}
+  {% include 'FrmMonoDTGPumpSZN' %}
+
+  {% when 'MonoDTGPumpWreath' %}
+  {% include 'FrmMonoDTGPumpWreath' %}
+
+  {% when 'MonoDTGQofCof' %}
+  {% include 'FrmMonoDTGQofCof' %}
+
+  {% when 'MonoDTGQueenHall' %}
+  {% include 'FrmMonoDTGQueenHall' %}
+
+  {% when 'MonoDTGRadPos' %}
+  {% include 'FrmMonoDTGRadPos' %}
+
+  {% when 'MonoDTGRaiseKind' %}
+  {% include 'FrmMonoDTGRaiseKind' %}
+
+  {% when 'MonoDTGRBStripe' %}
+  {% include 'FrmMonoDTGRBStripe' %}
+
+  {% when 'MonoDTGReasSeas' %}
+  {% include 'FrmMonoDTGReasSeas' %}
+
+  {% when 'MonoDTGRed' %}
+  {% include 'FrmMonoDTGRed' %}
+
+  {% when 'MonoDTGRedCup' %}
+  {% include 'FrmMonoDTGRedCup' %}
+
+  {% when 'MonoDTGRegMom' %}
+  {% include 'FrmMonoDTGRegMom' %}
+
+  {% when 'MonoDTGReindeer' %}
+  {% include 'FrmMonoDTGReindeer' %}
+
+  {% when 'MonoDTGReinFront' %}
+  {% include 'FrmMonoDTGReinFront' %}
+
+  {% when 'MonoDTGRetCof' %}
+  {% include 'FrmMonoDTGRetCof' %}
+
+  {% when 'MonoDTGRetroBall' %}
+  {% include 'FrmMonoDTGRetroBall' %}
+
+  {% when 'MonoDTGRetroDay' %}
+  {% include 'FrmMonoDTGRetroDay' %}
+
+  {% when 'MonoDTGRetroDogs' %}
+  {% include 'FrmMonoDTGRetroDogs' %}
+
+  {% when 'MonoDTGRetroGame' %}
+  {% include 'FrmMonoDTGRetroGame' %}
+
+  {% when 'MonoDTGRetroGators' %}
+  {% include 'FrmMonoDTGRetroGators' %}
+
+  {% when 'MonoDTGRetroHorns' %}
+  {% include 'FrmMonoDTGRetroHorns' %}
+
+  {% when 'MonoDTGRetroLove' %}
+  {% include 'FrmMonoDTGRetroLove' %}
+
+  {% when 'MonoDTGRetroPump' %}
+  {% include 'FrmMonoDTGRetroPump' %}
+
+  {% when 'MonoDTGRetroRoll' %}
+  {% include 'FrmMonoDTGRetroRoll' %}
+
+  {% when 'MonoDTGRetroSmile' %}
+  {% include 'FrmMonoDTGRetroSmile' %}
+
+  {% when 'MonoDTGRetroTigers' %}
+  {% include 'FrmMonoDTGRetroTigers' %}
+
+  {% when 'MonoDTGRetroXmas' %}
+  {% include 'FrmMonoDTGRetroXmas' %}
+
+  {% when 'MonoDTGRN' %}
+  {% include 'FrmMonoDTGRN' %}
+
+  {% when 'MonoDTGRockRoll' %}
+  {% include 'FrmMonoDTGRockRoll' %}
+
+  {% when 'MonoDTGRockstar' %}
+  {% include 'FrmMonoDTGRockstar' %}
+
+  {% when 'MonoDTGRolling' %}
+  {% include 'FrmMonoDTGRolling' %}
+
+  {% when 'MonoDTGRollTide' %}
+  {% include 'FrmMonoDTGRollTide' %}
+
+  {% when 'MonoDTGRoots' %}
+  {% include 'FrmMonoDTGRoots' %}
+
+  {% when 'MonoDTGRoseUSA' %}
+  {% include 'FrmMonoDTGRoseUSA' %}
+
+  {% when 'MonoDTGRT' %}
+  {% include 'FrmMonoDTGRT' %}
+
+  {% when 'MonoDTGRunStar' %}
+  {% include 'FrmMonoDTGRunStar' %}
+
+  {% when 'MonoDTGSanta' %}
+  {% include 'FrmMonoDTGSanta' %}
+
+  {% when 'MonoDTGSantaCof' %}
+  {% include 'FrmMonoDTGSantaCof' %}
+
+  {% when 'MonoDTGSantaOMG' %}
+  {% include 'FrmMonoDTGSantaOMG' %}
+
+  {% when 'MonoDTGSatBrunch' %}
+  {% include 'FrmMonoDTGSatBrunch' %}
+
+  {% when 'MonoDTGSaturday' %}
+  {% include 'FrmMonoDTGSaturday' %}
+
+  {% when 'MonoDTGSCarPride' %}
+  {% include 'FrmMonoDTGSCarPride' %}
+
+  {% when 'MonoDTGScaryMovie' %}
+  {% include 'FrmMonoDTGScaryMovie' %}
+
+  {% when 'MonoDTGSCPride' %}
+  {% include 'FrmMonoDTGSCPride' %}
+
+  {% when 'MonoDTGScrubLife' %}
+  {% include 'FrmMonoDTGScrubLife' %}
+
+  {% when 'MonoDTGScrubsCoff' %}
+  {% include 'FrmMonoDTGScrubsCoff' %}
+
+  {% when 'MonoDTGSEC' %}
+  {% include 'FrmMonoDTGSEC' %}
+
+  {% when 'MonoDTGSelfLoveUni' %}
+  {% include 'FrmMonoDTGSelfLoveUni' %}
+
+  {% when 'MonoDTGSelfLove' %}
+  {% include 'FrmMonoDTGSelfLove' %}
+
+  {% when 'MonoDTGSeuss' %}
+  {% include 'FrmMonoDTGSeuss' %}
+
+  {% when 'MonoDTGSham' %}
+  {% include 'FrmMonoDTGSham' %}
+
+  {% when 'MonoDTGShamPatt' %}
+  {% include 'FrmMonoDTGShamPatt' %}
+
+  {% when 'MonoDTGShineOn' %}
+  {% include 'FrmMonoDTGShineOn' %}
+
+  {% when 'MonoDTGShopping' %}
+  {% include 'FrmMonoDTGShopping' %}
+
+  {% when 'MonoDTGSingle' %}
+  {% include 'FrmMonoDTGSingle' %}
+
+  {% when 'MonoDTGSipSip' %}
+  {% include 'FrmMonoDTGSipSip' %}
+
+  {% when 'MonoDTGSkeleton' %}
+  {% include 'FrmMonoDTGSkeleton' %}
+
+  {% when 'MonoDTGSketch' %}
+  {% include 'FrmMonoDTGSketch' %}
+
+  {% when 'MonoDTGSkiing' %}
+  {% include 'FrmMonoDTGSkiing' %}
+
+  {% when 'MonoDTGSLP' %}
+  {% include 'FrmMonoDTGSLP' %}
+
+  {% when 'MonoDTGSmileHeart' %}
+  {% include 'FrmMonoDTGSmileHeart' %}
+
+  {% when 'MonoDTGSmiley' %}
+  {% include 'FrmMonoDTGSmiley' %}
+
+  {% when 'MonoDTGSmore' %}
+  {% include 'FrmMonoDTGSmore' %}
+
+  {% when 'MonoDTGSoFetch' %}
+  {% include 'FrmMonoDTGSoFetch' %}
+
+  {% when 'MonoDTGSparklers' %}
+  {% include 'FrmMonoDTGSparklers' %}
+
+  {% when 'MonoDTGSpecialDate' %}
+  {% include 'FrmMonoDTGSpecialDate' %}
+
+  {% when 'MonoDTGSpiceEvery' %}
+  {% include 'FrmMonoDTGSpiceEvery' %}
+
+  {% when 'MonoDTGSpiceGirl' %}
+  {% include 'FrmMonoDTGSpiceGirl' %}
+
+  {% when 'MonoDTGSpiceGirls' %}
+  {% include 'FrmMonoDTGSpiceGirls' %}
+
+  {% when 'MonoDTGSpiceNice' %}
+  {% include 'FrmMonoDTGSpiceNice' %}
+
+  {% when 'MonoDTGSpider' %}
+  {% include 'FrmMonoDTGSpider' %}
+
+  {% when 'MonoDTGSpirits' %}
+  {% include 'FrmMonoDTGSpirits' %}
+
+  {% when 'MonoDTGSpooky' %}
+  {% include 'FrmMonoDTGSpooky' %} 
+
+  {% when 'MonoDTGSpookyVibes' %}
+  {% include 'FrmMonoDTGSpookyVibes' %}
+
+  {% when 'MonoDTGSpringFlower' %}
+  {% include 'FrmMonoDTGSpringFlower' %}
+
+  {% when 'MonoDTGSprinkles' %}
+  {% include 'FrmMonoDTGSprinkles' %}
+
+  {% when 'MonoDTGSpritz' %}
+  {% include 'FrmMonoDTGSpritz' %}
+
+  {% when 'MonoDTGSqueezeDay' %}
+  {% include 'FrmMonoDTGSqueezeDay' %}
+
+  {% when 'MonoDTGStarMama' %}
+  {% include 'FrmMonoDTGStarMama' %}
+
+  {% when 'MonoDTGStarMini' %}
+  {% include 'FrmMonoDTGStarMini' %}
+
+  {% when 'MonoDTGStars' %}
+  {% include 'FrmMonoDTGStars' %}
+
+  {% when 'MonoDTGStick' %}
+  {% include 'FrmMonoDTGStick' %}
+
+  {% when 'MonoDTGStockings' %}
+  {% include 'FrmMonoDTGStockings' %}
+
+  {% when 'MonoDTGStop' %}
+  {% include 'FrmMonoDTGStop' %}
+
+  {% when 'MonoDTGStPattys' %}
+  {% include 'FrmMonoDTGStPattys' %}
+
+  {% when 'MonoDTGStripePhone' %}
+  {% include 'FrmMonoDTGStripePhone' %}
+
+  {% when 'MonoDTGSublime' %}
+  {% include 'FrmMonoDTGSublime' %}
+
+  {% when 'MonoDTGSucker' %}
+  {% include 'FrmMonoDTGSucker' %}
+
+  {% when 'MonoDTGSumCoffee' %}
+  {% include 'FrmMonoDTGSumCoffee' %}
+
+  {% when 'MonoDTGSumVibes' %}
+  {% include 'FrmMonoDTGSumVibes' %}
+
+  {% when 'MonoDTGSunday' %}
+  {% include 'FrmMonoDTGSunday' %}
+
+  {% when 'MonoDTGSunFlrFrame' %}
+  {% include 'FrmMonoDTGSunFlrFrame' %}
+
+  {% when 'MonoDTGSunFlrFront' %}
+  {% include 'FrmMonoDTGSunFlrFront' %}
+
+  {% when 'MonoDTGSunMind' %}
+  {% include 'FrmMonoDTGSunMind' %}
+
+  {% when 'MonoDTGSunnyCord' %}
+  {% include 'FrmMonoDTGSunnyCord' %}
+
+  {% when 'MonoDTGSunSoul' %}
+  {% include 'FrmMonoDTGSunSoul' %}
+
+  {% when 'MonoDTGSuper' %}
+  {% include 'FrmMonoDTGSuper' %}
+
+  {% when 'MonoDTGSW' %}
+  {% include 'FrmMonoDTGSW' %}
+
+  {% when 'MonoDTGSweatWeath' %}
+  {% include 'FrmMonoDTGSweatWeath' %}
+
+  {% when 'MonoDTGSweetAmer' %}
+  {% include 'FrmMonoDTGSweetAmer' %}
+
+  {% when 'MonoDTGTacoVine' %}
+  {% include 'FrmMonoDTGTacoVine' %}
+
+  {% when 'MonoDTGTake90s' %}
+  {% include 'FrmMonoDTGTake90s' %}
+
+  {% when 'MonoDTGTalkPump' %}
+  {% include 'FrmMonoDTGTalkPump' %}
+
+  {% when 'MonoDTGTarget' %}
+  {% include 'FrmMonoDTGTarget' %}
+
+  {% when 'MonoDTGTeachElf' %}
+  {% include 'FrmMonoDTGTeachElf' %}
+
+  {% when 'MonoDTGTeachFront' %}
+  {% include 'FrmMonoDTGTeachFront' %}
+
+  {% when 'MonoDTGTeachLOVE' %}
+  {% include 'FrmMonoDTGTeachLOVE' %}
+
+  {% when 'MonoDTGTeachTGIF' %}
+  {% include 'FrmMonoDTGTeachTGIF' %}
+
+  {% when 'MonoDTGtgif' %}
+  {% include 'FrmMonoDTGtgif' %}
+
+  {% when 'MonoDTGTGIF2' %}
+  {% include 'FrmMonoDTGTGIF2' %}
+
+  {% when 'MonoDTGThatWitch' %}
+  {% include 'FrmMonoDTGThatWitch' %}
+
+  {% when 'MonoDTGTieDye' %}
+  {% include 'FrmMonoDTGTieDye' %}
+
+  {% when 'MonoDTGTisSeas' %}
+  {% include 'FrmMonoDTGTisSeas' %}
+
+  {% when 'MonoDTGTommy' %}
+  {% include 'FrmMonoDTGTommy' %}
+
+  {% when 'MonoDTGTouchdown' %}
+  {% include 'FrmMonoDTGTouchdown' %}
+
+  {% when 'MonoDTGTown' %}
+  {% include 'FrmMonoDTGTown' %}
+
+  {% when 'MonoDTGTrees' %}
+  {% include 'FrmMonoDTGTrees' %}
+
+  {% when 'MonoDTGTreeWall' %}
+  {% include 'FrmMonoDTGTreeWall' %}
+
+  {% when 'MonoDTGTropFlam' %}
+  {% include 'FrmMonoDTGTropFlam' %}
+
+  {% when 'MonoDTGTunes' %}
+  {% include 'FrmMonoDTGTunes' %}
+
+  {% when 'MonoDTGTurkey' %}
+  {% include 'FrmMonoDTGTurkey' %}
+
+  {% when 'MonoDTGTXPride' %}
+  {% include 'FrmMonoDTGTXPride' %}
+
+  {% when 'MonoDTGUglyWeath' %}
+  {% include 'FrmMonoDTGUglyWeath' %}
+
+  {% when 'MonoDTGUSAClassic' %}
+  {% include 'FrmMonoDTGUSAClassic' %}
+
+  {% when 'MonoDTGUSALep' %}
+  {% include 'FrmMonoDTGUSALep' %}
+
+  {% when 'MonoDTGUSAMap' %}
+  {% include 'FrmMonoDTGUSAMap' %}
+
+  {% when 'MonoDTGVacay' %}
+  {% include 'FrmMonoDTGVacay' %}
+
+  {% when 'MonoDTGVacayVacay' %}
+  {% include 'FrmMonoDTGVacayVacay' %}
+
+  {% when 'MonoDTGValDay' %}
+  {% include 'FrmMonoDTGValDay' %}
+
+  {% when 'MonoDTGVeryMerry' %}
+  {% include 'FrmMonoDTGVeryMerry' %}
+
+  {% when 'MonoDTGVGfront' %}
+  {% include 'FrmMonoDTGVGfront' %}
+
+  {% when 'MonoDTGVibesCoff' %}
+  {% include 'FrmMonoDTGVibesCoff' %}
+
+  {% when 'MonoDTGVinMick' %}
+  {% include 'FrmMonoDTGVinMick' %}
+
+  {% when 'MonoDTGVinyl1' %}
+  {% include 'FrmMonoDTGVinyl1' %}
+
+  {% when 'MonoDTGVinyl2.3' %}
+  {% include 'FrmMonoDTGVinyl2.3' %}
+
+  {% when 'MonoDTGVinyl3' %}
+  {% include 'FrmMonoDTGVinyl3' %}
+
+  {% when 'MonoDTGWakeMake' %}
+  {% include 'FrmMonoDTGWakeMake' %}
+
+  {% when 'MonoDTGWakeMe' %}
+  {% include 'FrmMonoDTGWakeMe' %}
+
+  {% when 'MonoDTGWallBoo' %}
+  {% include 'FrmMonoDTGWallBoo' %}
+
+  {% when 'MonoDTGWallBucks' %}
+  {% include 'FrmMonoDTGWallBucks' %}
+
+  {% when 'MonoDTGWallConf' %}
+  {% include 'FrmMonoDTGWallConf' %}
+
+  {% when 'MonoDTGWallGrate' %}
+  {% include 'FrmMonoDTGWallGrate' %}
+
+  {% when 'MonoDTGWallPump' %}
+  {% include 'FrmMonoDTGWallPump' %}
+
+  {% when 'MonoDTGWallTeach' %}
+  {% include 'FrmMonoDTGWallTeach' %}
+
+  {% when 'MonoDTGWaterSlice' %}
+  {% include 'FrmMonoDTGWaterSlice' %}
+
+  {% when 'MonoDTGWCAmFlg' %}
+  {% include 'FrmMonoDTGWCAmFlg' %}
+
+  {% when 'MonoDTGWCCofLip' %}
+  {% include 'FrmMonoDTGWCCofLip' %}
+
+  {% when 'MonoDTGWCPineapple' %}
+  {% include 'FrmMonoDTGWCPineapple' %}
+
+  {% when 'MonoDTGWeekend' %}
+  {% include 'FrmMonoDTGWeekend' %}
+
+  {% when 'MonoDTGWeekendCord' %}
+  {% include 'FrmMonoDTGWeekendCord' %}
+
+  {% when 'MonoDTGWhoville' %}
+  {% include 'FrmMonoDTGWhoville' %}
+
+  {% when 'MonoDTGWife' %}
+  {% include 'FrmMonoDTGWife' %}
+
+  {% when 'MonoDTGWildDis' %}
+  {% include 'FrmMonoDTGWildDis' %}
+
+  {% when 'MonoDTGWildFall' %}
+  {% include 'FrmMonoDTGWildFall' %}
+
+  {% when 'MonoDTGWildLove' %}
+  {% include 'FrmMonoDTGWildLove' %}
+
+  {% when 'MonoDTGWildNurse' %}
+  {% include 'FrmMonoDTGWildNurse' %}
+
+  {% when 'MonoDTGWildTeach' %}
+  {% include 'FrmMonoDTGWildTeach' %}
+
+  {% when 'MonoDTGWildwest' %}
+  {% include 'FrmMonoDTGWildwest' %}
+
+  {% when 'MonoDTGWildXmas' %}
+  {% include 'FrmMonoDTGWildXmas' %}
+
+  {% when 'MonoDTGWine' %}
+  {% include 'FrmMonoDTGWine' %}
+
+  {% when 'MonoDTGWineVal' %}
+  {% include 'FrmMonoDTGWineVal' %}
+
+  {% when 'MonoDTGWinterHair' %}
+  {% include 'FrmMonoDTGWinterHair' %}
+
+  {% when 'MonoDTGWizard' %}
+  {% include 'FrmMonoDTGWizard' %}
+
+  {% when 'MonoDTGWMelon' %}
+  {% include 'FrmMonoDTGWMelon' %}
+
+  {% when 'MonoDTGWoofmas' %}
+  {% include 'FrmMonoDTGWoofmas' %}
+
+  {% when 'MonoDTGXmasCheer' %}
+  {% include 'FrmMonoDTGXmasCheer' %}
+
+  {% when 'MonoDTGXMasCoffee' %}
+  {% include 'FrmMonoDTGXMasCoffee' %}
+
+  {% when 'MonoDTGXmasCookies' %}
+  {% include 'FrmMonoDTGXmasCookies' %}
+
+  {% when 'MonoDTGXmasMorn' %}
+  {% include 'FrmMonoDTGXmasMorn' %}
+
+  {% when 'MonoDTGXMasRainbow' %}
+  {% include 'FrmMonoDTGXMasRainbow' %}
+
+  {% when 'MonoDTGXmasRedFront' %}
+  {% include 'FrmMonoDTGXmasRedFront' %}
+
+  {% when 'MonoDTGXMasWreath' %}
+  {% include 'FrmMonoDTGXMasWreath' %}
+
+  {% when 'MonoDTGXOXO' %}
+  {% include 'FrmMonoDTGXOXO' %}
+
+  {% when 'MonoDTGYouPizza' %}
+  {% include 'FrmMonoDTGYouPizza' %}
+
+  {% when 'MonoDTGFetchFall' %}
+  {% include 'FrmMonoDTGFetchFall' %}
+
+  {% when 'MonoDTGPlaidPump' %}
+  {% include 'FrmMonoDTGPlaidPump' %}
+
+  {% when 'MonoDTGDaisyPump' %}
+  {% include 'FrmMonoDTGDaisyPump' %}
+
+  {% when 'MonoDTGFallPumps' %}
+  {% include 'FrmMonoDTGFallPumps' %}
+
+  <!----------------------------------------------------------------------------->
+  <!------------------------------PACKAGES--------------------------------------->
+  <!----------------------------------------------------------------------------->
+
+  {% when 'MonoDTG2020Emb71M' %}
+  {% include 'FrmMonoDTG2020Emb71M' %}
+
+  {% when 'Mono101M71MSet' %}
+  {% include 'FrmMono101M71MSet' %}
+
+  {% when 'MonoDTGAirplaneEmb101M' %}
+  {% include 'FrmMonoDTGAirplaneEmb101M' %}
+
+  {% when 'MonoDTGAmoreEmb71M' %}
+  {% include 'FrmMonoDTGAmoreEmb71M' %}
+
+  {% when 'MonoDTGAntiVDayEmb71M' %}
+  {% include 'FrmMonoDTGAntiVDayEmb71M' %}
+
+  {% when 'MonoDTGCaffQueenEmb71M' %}
+  {% include 'FrmMonoDTGCaffQueenEmb71M' %}
+
+  {% when 'MonoDTGCandyHeartEmb71M' %}
+  {% include 'FrmMonoDTGCandyHeartEmb71M' %}
+
+  {% when 'MonoDTGCoffeeCordEmb101M' %}
+  {% include 'FrmMonoDTGCoffeeCordEmb101M' %}
+
+  {% when 'MonoDTGCoffeeEmb71M' %}
+  {% include 'FrmMonoDTGCoffeeEmb71M' %}
+
+  {% when 'MonoDTGCofLoverEmb71M' %}
+  {% include 'FrmMonoDTGCofLoverEmb71M' %}
+
+  {% when 'MonoDTGCozyCoffEmb71M' %}
+  {% include 'FrmMonoDTGCozyCoffEmb71M' %}
+
+  {% when 'MonoDTGCozyEmb101M' %}
+  {% include 'FrmMonoDTGCozyEmb101M' %}
+
+  {% when 'MonoDTGDaysEmb71M' %}
+  {% include 'FrmMonoDTGDaysEmb71M' %}
+
+  {% when 'MonoDTGDogValEmb71M' %}
+  {% include 'FrmMonoDTGDogValEmb71M' %}
+
+  {% when 'MonoDTGGlassesEmb71M' %}
+  {% include 'FrmMonoDTGGlassesEmb71M' %}
+
+  {% when 'MonoDTGHolWreathEmb71M' %}
+  {% include 'FrmMonoDTGHolWreathEmb71M' %}
+
+  {% when 'MonoDTGHomeCastleEmb71M' %}
+  {% include 'FrmMonoDTGHomeCastleEmb71M' %}
+
+  {% when 'MonoDTGLeopardEmb71M' %}
+  {% include 'FrmMonoDTGLeopardEmb71M' %}
+
+  {% when 'MonoDTGLotsLoveEmb71M' %}
+  {% include 'FrmMonoDTGLotsLoveEmb71M' %}
+
+  {% when 'MonoDTGMerryXmasEmb71M' %}
+  {% include 'FrmMonoDTGMerryXmasEmb71M' %}
+
+  {% when 'MonoDTGMommyFlamPckg' %}
+  {% include 'FrmMonoDTGMommyFlamPckg' %}
+
+  {% when 'MonoDTGMommyLillyPckg' %}
+  {% include 'FrmMonoDTGMommyLillyPckg' %}
+
+  {% when 'MonoDTGMommyMinPckg' %}
+  {% include 'FrmMonoDTGMommyMinPckg' %}
+
+  {% when 'MonoDTGPlaidMugEmb71M' %}
+  {% include 'FrmMonoDTGPlaidMugEmb71M' %}
+
+  {% when 'MonoDTGPopCheersEmb71M' %}
+  {% include 'FrmMonoDTGPopCheersEmb71M' %}
+
+  {% when 'MonoDTGQofCofEmb71M' %}
+  {% include 'FrmMonoDTGQofCofEmb71M' %}
+
+  {% when 'MonoDTGSantaEmb71M' %}
+  {% include 'FrmMonoDTGSantaEmb71M' %}
+
+  {% when 'MonoDTGValDayEmb71M' %}
+  {% include 'FrmMonoDTGValDayEmb71M' %}
+
+  {% when 'MonoDTGVibesCoffEmb101M' %}
+  {% include 'FrmMonoDTGVibesCoffEmb101M' %}
+
+  {% when 'MonoDTGVinyl2.3DTGCPlaid' %}
+  {% include 'FrmMonoDTGVinyl2.3DTGCPlaid' %}
+
+  {% when 'MonoDTGVinyl2.3DTGFilthy' %}
+  {% include 'FrmMonoDTGVinyl2.3DTGFilthy' %}
+
+  {% when 'MonoDTGWakeMeEmb71M' %}
+  {% include 'FrmMonoDTGWakeMeEmb71M' %}
+
+  {% when 'MonoDTGWildLoveEmb71M' %}
+  {% include 'FrmMonoDTGWildLoveEmb71M' %}
+
+  {% when 'MonoDTGWildXmasEmb71M' %}
+  {% include 'FrmMonoDTGWildXmasEmb71M' %}
+
+  {% when 'MonoDTGXmasCookiesEmb71M' %}
+  {% include 'FrmMonoDTGXmasCookiesEmb71M' %}
+
+  {% when 'MonoDTGXmasMornEmb71M' %}
+  {% include 'FrmMonoDTGXmasMornEmb71M' %}
+
+  {% when 'Mono101MFancyEmb71M' %}
+  {% include 'Mono101MFancyEmb71M' %}
+
+  <!--------------------------------------------------------------------------------------->
+  <!------------------------------NON - MONOGRAM DTG--------------------------------------->
+  <!--------------------------------------------------------------------------------------->
+
+  {% when 'MonoDTGMyHappyPlace' %}
+  {% include 'FrmMonoDTGMyHappyPlace' %}
+
+  {% when 'MonoDTGNash' %}
+  {% include 'FrmMonoDTGNash' %}
+
+  {% when 'MonoDTGDiego' %}
+  {% include 'FrmMonoDTGDiego' %}
+
+  {% when 'MonoDTGNYCTaxi' %}
+  {% include 'FrmMonoDTGNYCTaxi' %}
+
+  {% when 'MonoDTGColorWords' %}
+  {% include 'FrmMonoDTGColorWords' %}
+
+  {% when 'MonoDTGSmileSlv' %}
+  {% include 'FrmMonoDTGSmileSlv' %}
+
+  {% when 'MonoDTGTeachBlock' %}
+  {% include 'FrmMonoDTGTeachBlock' %}
+
+  {% when 'MonoDTGHeartSlv' %}
+  {% include 'FrmMonoDTGHeartSlv' %}
+
+  {% when 'MonoDTGPHeartSlv' %}
+  {% include 'FrmMonoDTGPHeartSlv' %}
+
+  {% when 'MonoDTGPSLFront' %}
+  {% include 'FrmMonoDTGPSLFront' %}
+
+  <!--------------------------------------------------------------------------------------->
+  <!------------------------------NON - MONOGRAM EMB--------------------------------------->
+  <!--------------------------------------------------------------------------------------->
+
+  {% when 'Mono101MRibbon' %}
+  {% include 'FrmMono101MRibbon' %}
+
+  {% when 'Mono101MRatherBe' %}
+  {% include 'FrmMono101MRatherBe' %}
+
+  {% when 'Mono254MCities' %}
+  {% include 'FrmMono254MCities' %}
+
+  {% when 'Mono304MHappy' %}
+  {% include 'FrmMono304MHappy' %}
+
+  {% when 'Mono71MIcons' %}
+  {% include 'FrmMono71MIcons' %}
+
+  {% when 'Mono89MCity' %}
+  {% include 'FrmMono89MCity' %}
+
+  {% when 'Mono101MGoodVibes' %}
+  {% include 'FrmMono101MGoodVibes' %}
+
+  {% when 'Mono101MNameFont' %}
+  {% include 'FrmMono101MNameFont' %}
+  
+  {% when 'Mono71MNameFont' %}
+  {% include 'FrmMono71MNameFont' %}
+
+  {% when 'Mono101MCurvedNameFont' %}
+  {% include 'FrmMono101MCurvedNameFont' %}
+
+  {% when 'Mono101MSB54M' %}
+  {% include 'FrmMono101MSB54M' %}
+
+  {% when 'Mono101MSmileName' %}
+  {% include 'FrmMono101MSmileName' %}
+
+  {% when 'Mono71MSmileName' %}
+  {% include 'FrmMono71MSmileName' %}
+
+  {% when 'Mono101MAppleName' %}
+  {% include 'FrmMono101MAppleName' %}
+
+  {% when 'Mono101MPENCILName' %}
+  {% include 'FrmMono101MPENCILName' %}
+
+  {% when 'Mono101MTeacherName' %}
+  {% include 'FrmMono101MTeacherName' %}
+
+  {% when 'Mono254MCoffee' %}
+  {% include 'FrmMono254MCoffee' %}
+
+  {% when 'Mono101MAngel' %}
+  {% include 'FrmMono101MAngel' %}
+
+  {% when 'Mono101MFlagName' %}
+  {% include 'FrmMono101MFlagName' %}
+
+  {% when 'Mono101MFireW' %}
+  {% include 'FrmMono101MFireW' %}
+
+  <!--------------------------------------------------------------------------------------->
+  <!------------------------------NON - PACKAGES EMB--------------------------------------->
+  <!--------------------------------------------------------------------------------------->
+
+  {% when 'EmbCityIcons' %}
+  {% include 'FrmEmbCityIcons' %}
+
+  <!----------------------------------------------------------------------------------->
+  <!------------------------------OTHER PREVIEWS--------------------------------------->
+  <!----------------------------------------------------------------------------------->
+  
+  {% when 'Mono139mPreview' %}
+  {% include 'FrmMono139mPreview' %}
+
+  {% when '139MLemon' %}
+  {% include 'Frm139MLemon' %}
+
+  {% when '139MLobster' %}
+  {% include 'Frm139MLobster' %}
+  
+  {% when '139MWMelon' %}
+  {% include 'Frm139MWMelon' %}
+  
+  {% when '58MFlamingo' %}
+  {% include 'Frm58MFlamingo' %}
+  
+  {% when '58MMickeyHead' %}
+  {% include 'Frm58MMickeyHead' %}
+
+  {% when '58MPineapple' %}
+  {% include 'Frm58MPineapple' %}
+
+  {% when '58MSunFlower' %}
+  {% include 'Frm58MSunFlower' %}
+  
+  {% when '58MWMelon' %}
+  {% include 'Frm58MWMelon' %}
+  
+  {% when 'Mono38mPreview' %}
+  {% include 'FrmMono38mPreview' %}
+
+  {% when 'Mono58mPreview' %}
+  {% include 'FrmMono58mPreview' %}
+  
+  {% when 'Mono6M-71M' %}
+  {% include 'FrmMono6M-71M' %}
+  
+  {% when 'Mono71mPkg101m' %}
+  {% include 'FrmMono71mPkg101m' %}
+
+  {% when 'Mono71mPkg89m' %}
+  {% include 'FrmMono71mPkg89m' %}
+
+  {% when 'Mono71mPreview' %}
+  {% include 'FrmMono71mPreview' %}
+  
+  {% when 'Mono76mPreview' %}
+  {% include 'FrmMono76mPreview' %}
+  
+  {% when 'Mono89mPreview' %}
+  {% include 'FrmMono89mPreview' %}
+  
+  {% when 'MonoBigPrintPreview' %}
+  {% include 'FrmMonoBigPrintPreview' %}
+
+  {% when 'MonoDup101M101M' %}
+  {% include 'FrmMonoDup101M101M' %}
+
+  {% when 'MonoDupSB101M' %}
+  {% include 'FrmMonoDupSB101M' %}
+
+  {% when 'MonoDup101MNameFont' %}
+  {% include 'FrmMonoDup101MNameFont' %}
+
+  {% when 'MonoDupMono17-71M' %}
+  {% include 'FrmMonoDupMono17-71M' %}
+  
+  {% when 'MonoEmb101MDTGVinyl3' %}
+  {% include 'FrmMonoEmb101MDTGVinyl3' %}
+  
+  {% when 'MonoEMBGirlGo101m101m' %}
+  {% include 'FrmMonoEMBGirlGo101m101m' %}
+  
+  {% when 'MonoEMBLoungeSet101M' %}
+  {% include 'FrmMonoEMBLoungeSet101M' %}
+
+  {% when 'MonoEmbMommyMePckg' %}
+  {% include 'FrmMonoEmbMommyMePckg' %}
+
+  {% when 'MonogramPreview' %}
+  {% include 'FrmMonogramPreview' %}
+  
+  {% when 'MonoPkgDTGEMBdef' %}
+  {% include 'FrmMonoPkgDTGEMBdef' %}
+
+  {% when 'MonoWordPatchApp' %}
+  {% include 'FrmMonoWordPatchApp' %}
+  
+  {% when 'MonoInitialPatchApp' %}
+  {% include 'FrmMonoInitialPatchApp' %}
+  
+  {% when 'MonoDupMonoInitialPatchApp' %}
+  {% include 'FrmMonoDupMonoInitialPatchApp' %}
+
+  <!----------------------------------------------------------------------------------->
+  <!------------------------------27/07/2023--------------------------------------->
+  <!----------------------------------------------------------------------------------->
+  
+  {% when 'Mono228UMSocial' %}
+  {% include 'FrmMono228UMSocial' %}
+  
+  {% when 'Mono101MHoodie' %}
+  {% include 'FrmMono101MHoodie' %}
+  
+  {% when 'Mono101MSweatshirt' %}
+  {% include 'FrmMono101MSweatshirt' %}
+  
+  {% when 'Mono101MEra' %}
+  {% include 'FrmMono101MEra' %}
+  
+  {% when 'Mono101MFallFor' %}
+  {% include 'FrmMono101MFallFor' %}
+  
+  {% when 'Mono228MBluePumpSet' %}
+  {% include 'FrmMono228MBluePumpSet' %}
+  
+  {% when 'Mono228MCoziness' %}
+  {% include 'FrmMono228MCoziness' %}
+  
+  {% when 'Mono101MBluePump' %}
+  {% include 'FrmMono101MBluePump' %}
+  
+  {% when 'Mono101MBats' %}
+  {% include 'FrmMono101MBats' %}
+  
+  {% when 'Mono101MFlorPump' %}
+  {% include 'FrmMono101MFlorPump' %}
+
+  <!----------------------------------------------------------------------------------->
+  <!------------------------------27/07/2023--------------------------------------->
+  <!----------------------------------------------------------------------------------->
+  
+  {% when 'MonoDTGPillow' %}
+  {% include 'FrmMonoDTGPillow' %}
+  
+  {% when 'MonoDTGLepPatt' %}
+  {% include 'FrmMonoDTGLepPatt' %}
+  
+  {% when 'MonoDTGPumpWrap' %}
+  {% include 'FrmMonoDTGPumpWrap' %}
+  
+  {% when 'MonoDTGPlaidWrap' %}
+  {% include 'FrmMonoDTGPlaidWrap' %}
+  
+  {% when 'MonoDTGHallWrap' %}
+  {% include 'FrmMonoDTGHallWrap' %}
+
+  <!----------------------------------------------------------------------------------->
+  <!------------------------------03/08/2023--------------------------------------->
+  <!----------------------------------------------------------------------------------->
+  
+  {% when 'Mono101M58M' %}
+  {% include 'FrmMono101M58M' %}
+  
+  {%endcase %}
+  <!--MonoJavs-->
+
+
+
+  {%- if enable_dynamic_buttons -%}
+  {{ form | payment_button }}
+  {%- endif -%}
+
+  {%- if enable_dynamic_buttons -%}
+</div>
+{%- endif -%}
+
+<div class="shopify-payment-terms product__policies">{{ form | payment_terms }}</div>
+
+<select name="id" data-product-select class="product-single__variants no-js">
+  {%- for variant in product.variants -%}
+  {%- if variant.available -%}
+  <option {% if variant==product.selected_or_first_available_variant %} selected="selected" {% endif %}
+    value="{{ variant.id }}">
+    {{ variant.title }} - {{ variant.price | money_with_currency }}
+  </option>
+  {%- else -%}
+  <option disabled="disabled">
+    {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+  </option>
+  {%- endif -%}
+  {%- endfor -%}
+</select>
+
+<textarea data-variant-json class="hide" aria-hidden="true" aria-label="Product JSON">
+    {{ product.variants | json }}
+  </textarea>
+{%- if product.options.size > 1 -%}
+<textarea data-current-variant-json class="hide" aria-hidden="true" aria-label="Variant JSON">
+      {{ current_variant | json }}
+    </textarea>
+{%- endif -%}
+{%- endform -%}

@@ -1,0 +1,63 @@
+<div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+        <div class="w3-center">
+            <span onclick="document.getElementById('id01').style.display='none'" id="btnClose" class="w3-button w3-large w3-hover-Sand w3-display-topright" title="Close Modal">&times;</span>
+
+        </div>
+
+        <div class="w3-row w3-border w3-topbar w3-bottombar w3-leftbar w3-rightbar">
+                       
+
+            <div id="monogramimage"  class="w3-half w3-container  w3-Sand   w3-center ">
+            
+            </div>   
+               <div class="w3-half w3-container   w3-cell w3-light">
+                 
+                <p class="line-item-property__field">
+                </p>
+                <p class="line-item-property__field">
+                </p>
+                <p class="line-item-property__field">
+
+                  <p class="line-item-property__field">
+                    <label class="ep_block  ">Monogram Initials (First, Last)<span class="validity"></span></label>
+                    <input class="w3-input w3-border  w3-round w3-margin-bottom" form="{{ form_id}}" id="MonogramText" type="text" maxlength="3"  placeholder="AB"  name="properties[Monogram Initials (First, Last)]" required>
+                  
+                        
+                </p>  
+                    <p class="line-item-property__field">
+                    <label class="ep_block" style="display: none;">Color:</label>
+
+                     <select required id="threadcolor" form="{{ form_id}}" style="display: none;" class="w3-select w3-border" name="properties[Monogram Color]">
+                         <option value="Black" data-valcolor="A000000" data-option_value_key="0">Black</option>
+
+                        
+                
+
+                    </select>
+                </p>
+                  <div id="validatorId">  </div>
+                  <label class="ep_block  " style="display: none;">Monogram Style:
+                        <div id="debug">  </div>
+                      <div id="hiddenMonogramImage">  </div>
+                      <div id="PayLinkMonogramImage">  </div>                          
+                      <div id="showMonogramImage">  </div>
+                    </label>
+
+                    <select required id="MonogramFont" form="{{ form_id}}" style="display: none;" class="w3-select w3-border" name="properties[Monogram Style]">
+                        <option value="2 Letter Circle" data-valname="DTG2ChampVibes" data-option_value_key="0">2 Letter Circle</option> 
+                    </select>
+                </p>
+
+                <p class="line-item-property__field">
+        
+                  {%- include 'MonoAddtoCart' -%}
+        
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        <!---MonogramPreview End--->
+        <button type="button" id="preview-monogram" onclick="document.getElementById('id01').style.display='block'" class="button button--primary">Add your Monogram</button>

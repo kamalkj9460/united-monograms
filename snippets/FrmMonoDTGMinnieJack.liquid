@@ -1,0 +1,70 @@
+ <div id="id01" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+            <div class="w3-center">
+                <span onclick="document.getElementById('id01').style.display='none'" id="btnClose" class="w3-button w3-large w3-hover-Sand w3-display-topright" title="Close Modal">&times;</span>
+
+            </div>
+
+            <div class="w3-row w3-border w3-topbar w3-bottombar w3-leftbar w3-rightbar">
+                           
+ 
+                <div id="monogramimage"  class="w3-half w3-container  w3-Sand   w3-center ">
+                
+                </div>   
+                   <div class="w3-half w3-container   w3-cell w3-light">
+                     
+                    <p class="line-item-property__field">
+                    </p>
+                    <p class="line-item-property__field">
+                    </p>
+                    <p class="line-item-property__field">
+
+                      <div id="validatorId">  </div>
+                      <label class="ep_block  ">Personalization:
+							<div id="debug">  </div>
+                          <div id="hiddenMonogramImage">  </div>
+                          <div id="PayLinkMonogramImage">  </div>                          
+                          <div id="showMonogramImage">  </div>
+                        </label>
+                     
+                        <select required id="MonogramFont" form="{{ form_id}}"  class="w3-select w3-border" name="properties[Font]">
+                            <option value="Word" data-valname="DTGMinnieJack" data-option_value_key="0">Yes</option>
+                           <option value="No Word" data-valname="DTGMinnieJackNO" data-option_value_key="1">No</option> 
+                        </select>
+                     </p> 
+                     </p> 
+                       <p class="line-item-property__field">
+                        <label class="ep_block" >Pattern:</label>
+
+                         <select required id="FontPattern"   class="w3-select w3-border" name="properties[FontPattern]">
+                             <option value="Minnie" data-valname="Minnie" data-option_value_key="0">Minnie</option>
+                           <option value="Mickey" data-valname="Mickey" data-option_value_key="1">Mickey</option> 
+                        </select>
+                    </p> 
+                     </p> 
+                      <p class="line-item-property__field">
+                        <label class="ep_block  ">Enter Text<span class="validity"></span></label>
+                        <input class="w3-input w3-border  w3-round w3-margin-bottom" form="{{ form_id}}" id="MonogramText" type="text" maxlength="12"  placeholder="Text"  name="properties[Text]" required>
+                      
+                            
+                    </p>                     
+                        <p class="line-item-property__field">
+                        <label class="ep_block" style="display: none;" >Outline Color:</label>
+                         <select required id="threadcolor" style="display: none;"  class="w3-select w3-border" name="properties[Monogram Color]">
+                            <option value="Black" style="display: none;" data-valcolor="A000000" data-option_value_key="0">Black</option>
+                        </select>
+
+                      
+                      
+                    </p>
+
+                        {%- include 'MonoAddtoCart' -%}
+
+                </div>
+       </div>
+         </div>
+  </div>
+    
+    <!---MonogramPreview End--->
+    <button type="button" id="preview-monogram" onclick="document.getElementById('id01').style.display='block'" class="button button--primary">Make It Yours</button>
+       

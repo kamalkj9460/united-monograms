@@ -1,0 +1,96 @@
+<div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+        <div class="w3-center">
+            <span onclick="document.getElementById('id01').style.display='none'" id="btnClose" class="w3-button w3-large w3-hover-Sand w3-display-topright" title="Close Modal">&times;</span>
+
+        </div>
+
+        <div class="w3-row w3-border w3-topbar w3-bottombar w3-leftbar w3-rightbar">
+                       
+
+            <div id="monogramimage"  class="w3-half w3-container  w3-Sand   w3-center ">
+            
+            </div>   
+               <div class="w3-half w3-container   w3-cell w3-light">
+                 
+                <p class="line-item-property__field">
+                </p>
+                <p class="line-item-property__field">
+                </p>
+                <p class="line-item-property__field">
+
+                  <p class="line-item-property__field">
+                    <label class="ep_block  ">Monogram (first, LAST NAME, middle)<span class="validity"></span></label>
+                    <input class="w3-input w3-border  w3-round w3-margin-bottom" form="{{ form_id}}" id="MonogramText" type="text" maxlength="3"  placeholder="ABC"  name="properties[Monogram (first, LAST NAME, middle)]" required>
+                  
+                        
+                </p>  
+                   <p class="line-item-property__field">
+                    <label class="ep_block" >Lilly Pattern:</label>
+
+                     <select required id="PlaidPattern" form="{{ form_id}}"   class="w3-select w3-border" name="properties[LillyPattern]">
+                         <option value="1" data-valname="1" data-option_value_key="1">1</option>
+                       <option value="2" data-valname="2" data-option_value_key="2">2</option>
+                       <option value="3" data-valname="3" data-option_value_key="3">3</option>
+                       <option value="4" data-valname="4" data-option_value_key="4">4</option>
+                       <option value="5" data-valname="5" data-option_value_key="5">5</option>
+                       <option value="6" data-valname="6" data-option_value_key="6">6</option>
+                       <option value="7" data-valname="7" data-option_value_key="7">7</option>
+                       <option value="8" data-valname="8" data-option_value_key="8">8</option>
+                       <option value="9" data-valname="9" data-option_value_key="9">9</option>
+                       <option value="10" data-valname="10" data-option_value_key="10">10</option>
+                       <option value="11" data-valname="11" data-option_value_key="11">11</option>
+                       <option value="12" data-valname="12" data-option_value_key="12">12</option>
+                       <option value="13" data-valname="13" data-option_value_key="13">13</option>
+                       
+                    </select>
+                </p>                     
+                         </p>                     
+                        <p class="line-item-property__field">
+                        <label class="ep_block" >Outline Color:</label>
+                         <select required id="threadcolor"   class="w3-select w3-border" name="properties[Outline Color]">
+                             <option value="Black" data-valcolor="A000000" data-option_value_key="0">Black</option>
+                           <option value="White" data-valcolor="Affffff" data-option_value_key="0">White</option>
+                           <option value="Periwinkle" data-valcolor="A8990e0" data-option_value_key="0">Periwinkle</option>
+                           <option value="Bright Blue" data-valcolor="A6ac9ec" data-option_value_key="0">Bright Blue</option>
+                           <option value="Royal Blue" data-valcolor="A1174e9" data-option_value_key="0">Royal Blue</option>
+                           <option value="Light Blue" data-valcolor="A85d2dc" data-option_value_key="0">Light Blue</option>
+                           <option value="Dark Pink" data-valcolor="Aff479a" data-option_value_key="0">Dark Pink</option>
+                           <option value="Baby Blue" data-valcolor="A79bce7" data-option_value_key="0">Baby Blue</option>
+                           <option value="Dark Fuschia" data-valcolor="Ae15c9d" data-option_value_key="0">Dark Fuschia</option>
+                           <option value="Coral" data-valcolor="Aff86a5" data-option_value_key="0">Coral</option>
+                           <option value="Hot Pink" data-valcolor="Aff2584" data-option_value_key="0">Hot Pink</option>
+                           <option value="Dark Blue" data-valcolor="A3f32a2" data-option_value_key="0">Dark Blue</option>
+                        
+                          
+                        </select>
+
+                  
+                 </p>
+                  <div id="validatorId">  </div>
+                  <label class="ep_block  ">Monogram Style:
+                        <div id="debug">  </div>
+                      <div id="hiddenMonogramImage">  </div>
+                      <div id="PayLinkMonogramImage">  </div>                          
+                      <div id="showMonogramImage">  </div>
+                    </label>
+
+                    <select required id="MonogramFont"  form="{{ form_id}}" class="w3-select w3-border" name="properties[Monogram Style]">
+                        <option value="Circle" data-valname="DTGLillyCir" data-option_value_key="0">Circle</option>
+                       <option value="Vine" data-valname="DTGLillyvine" data-option_value_key="1">Vine</option>
+                         <option value="2 Letter Circle"   data-valname="DTG2Lilly" data-option_value_key="2">2 Letter Circle</option>
+                    </select>
+                </p>
+
+                <p class="line-item-property__field">
+        
+                  {%- include 'MonoAddtoCart' -%}
+        
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        <!---MonogramPreview End--->
+        <button type="button" id="preview-monogram" onclick="document.getElementById('id01').style.display='block'" class="button button--primary">Add your Monogram</button>

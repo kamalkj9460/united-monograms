@@ -1,0 +1,16 @@
+<!---------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+PATCHES EMB PREVIEWS
+-----------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------->
+
+{% if template contains 'MonoWordPatchApp' %}
+<script src="{{ 'MonoEMBPatches.js' | asset_url }}" defer="defer"></script> 
+
+{% elsif template contains 'MonoDupMonoInitialPatchApp' %}
+<script src="{{ 'MonoPckgSameSizeEMBPatches.js' | asset_url }}" defer="defer"></script>
+
+{% elsif template contains 'MonoInitialPatchApp' %}
+<script src="{{ 'MonoEMBPatches.js' | asset_url }}" defer="defer"></script>
+
+{% endif %}
