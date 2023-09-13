@@ -1,7 +1,7 @@
    //-----------------------------------
     //DTG
     //-----------------------------------
-    $(function() {
+   setTimeout(function(){
 
       //Start variables needed:
         var debug; 
@@ -730,7 +730,7 @@
                  $("#monogramimage").html("<img id='monogramImg'   class='line-item-property__field    w3-padding-48 ' style='  object-fit: fill'    alt='Monogram here'  src='//cdn.shopify.com/s/files/1/0054/6819/2886/files/DTGPlaidMug.png?2778'    />");
 
             } else if (MonogramFont.indexOf("DTGStockings") !=-1) {// MWL111919
-                 $("#monogramimage").html("<img id='monogramImg'   class='line-item-property__field    w3-padding-48 ' style='  object-fit: fill'    alt='Monogram here'  src='//cdn.shopify.com/s/files/1/0635/8561/files/ABC_18003194.png?v=1691148027'    />");
+                 $("#monogramimage").html("<img id='monogramImg'   class='line-item-property__field    w3-padding-48 ' style='  object-fit: fill'    alt='Monogram here'  src='//cdn.shopify.com/s/files/1/0054/6819/2886/files/DTGStockings.png?2836'    />");
 
             } else if (MonogramFont.indexOf("DTGColorLights") !=-1) {// MWL111919
                  $("#monogramimage").html("<img id='monogramImg'   class='line-item-property__field    w3-padding-48 ' style='  object-fit: fill'    alt='Monogram here'  src='//cdn.shopify.com/s/files/1/0054/6819/2886/files/DTGColorLights.png?2836'    />");

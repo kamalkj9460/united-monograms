@@ -33,8 +33,10 @@
                           <div
                             class="grid__image-ratio grid__image-ratio--{{ section.settings.image_size }}">
                             {% assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
-                            <img class="lazyload grid__image-cover"
-                                data-src="{{ img_url }}"
+                            <img class="lazyloaded grid__image-cover"
+                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-class="LazyLoad"
+                                data-src="{{ block.settings.image | img_url: '1080x' }}"
+                              data-mob-src="{{ block.settings.image | img_url: '540x' }}"
                                 data-widths="[360, 540, 720, 900, 1080]"
                                 data-aspectratio="{{ block.settings.image.aspect_ratio }}"
                                 data-sizes="auto"
@@ -47,8 +49,10 @@
                       {%- else -%}
                         <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.image.aspect_ratio }}%;">
                           {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-                          <img class="lazyload"
-                              data-src="{{ img_url }}"
+                          <img class="lazyloaded"
+                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-class="LazyLoad"
+                              data-src="{{ block.settings.image | img_url: '1080x' }}"
+                              data-mob-src="{{ block.settings.image | img_url: '540x' }}"
                               data-widths="[180, 360, 540, 720, 900, 1080]"
                               data-aspectratio="{{ block.settings.image.aspect_ratio }}"
                               data-sizes="auto"

@@ -1,6 +1,27 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}" dir="{{ settings.text_direction }}">
 <head>
+<script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer></script>
+
+<script>
+  window.renderOptIn = function() {
+    window.gapi.load('surveyoptin', function() {
+      window.gapi.surveyoptin.render(
+        {
+          // REQUIRED FIELDS
+          "merchant_id": 126328675,
+          "order_id": "ORDER_ID",
+          "email": "CUSTOMER_EMAIL",
+          "delivery_country": "COUNTRY_CODE",
+          "estimated_delivery_date": "YYYY-MM-DD",
+
+          // OPTIONAL FIELDS
+          "products": [{"gtin":"GTIN1"}, {"gtin":"GTIN2"}]
+        });
+    });
+  }
+</script>
+{% comment %}EasylockdownHeadBegin{% endcomment %}{% capture elhRender %}{% render 'easylockdown_head', easylockdownRender: true, easylockdownOnlySpecialPriceSelector: easylockdownOnlySpecialPriceSelector, easylockdownCustomPriceSelector: easylockdownCustomPriceSelector %}{% endcapture %}{% assign elhRender = elhRender | split: '--elhResults--'%}{{ elhRender[0] }}{% comment %}EasylockdownHeadEnd{% endcomment %}
 <meta name="facebook-domain-verification" content="sk12dodqywz53hx9jd3168xlzepj0z" />
   
 	<script>
@@ -214,7 +235,7 @@ function sasGetOrderRef() {
 	<!---MonoJavs--->
 
       <main class="main-content" id="MainContent">
-        {{ content_for_layout }}
+        {% comment %}{{ content_for_layout }}{% endcomment %}{% render 'easylockdown_body', content_for_layout: content_for_layout, elhDefines: elhRender[1] %}
       </main>
 
       {%- section 'footer-promotions' -%}

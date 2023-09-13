@@ -91,7 +91,7 @@
     {%- endunless -%}
 
     <div class="article__body rte">
-      {{ article.content }}
+      {{ article.content | replace: '<script async="" src="' , '<script type="lazyload_int" data-src="' }}
     </div>
 
     {%- if section.settings.social_sharing_blog -%}

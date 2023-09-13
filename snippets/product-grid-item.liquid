@@ -92,8 +92,10 @@ if tag contains '_label_'
         {%- if fixed_aspect_ratio -%}
           <div
             class="grid__image-ratio grid__image-ratio--{{ settings.product_grid_image_size }}">
-            <img class="lazyload{% unless settings.product_grid_image_fill %} grid__image-contain{% endunless %}"
-              data-src="{{ img_url }}"
+            <img class="lazyloaded{% unless settings.product_grid_image_fill %} grid__image-contain{% endunless %}"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-class="LazyLoad"
+              data-src="{{ preview_image | img_url: '1080x' }}"
+              data-mob-src="{{ preview_image | img_url: '540x' }}"
               data-widths="[360, 540, 720, 900, 1080]"
               data-aspectratio="{{ preview_image.aspect_ratio }}"
               data-sizes="auto"
@@ -103,8 +105,10 @@ if tag contains '_label_'
           <div class="image-wrap"
             style="height: 0; padding-bottom: {{ 100 | divided_by: preview_image.aspect_ratio }}%;"
             >
-            <img class="grid-product__image lazyload"
-                data-src="{{ img_url }}"
+            <img class="grid-product__image lazyloaded"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-class="LazyLoad"
+                data-src="{{ preview_image | img_url: '1080x' }}"
+                data-mob-src="{{ preview_image | img_url: '540x' }}"
                 data-widths="[360, 540, 720, 900, 1080]"
                 data-aspectratio="{{ preview_image.aspect_ratio }}"
                 data-sizes="auto"
@@ -123,8 +127,10 @@ if tag contains '_label_'
           {%- endfor -%}
           <div class="grid-product__secondary-image small--hide">
             {%- assign img_url = second_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-            <img class="lazyload"
-                data-src="{{ img_url }}"
+            <img class="lazyloaded"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-class="LazyLoad"
+              data-src="{{ second_image | img_url: '1080x' }}"
+              data-mob-src="{{ second_image | img_url: '540x' }}"
                 data-widths="[360, 540, 720, 1000]"
                 data-aspectratio="{{ second_image.aspect_ratio }}"
                 data-sizes="auto"

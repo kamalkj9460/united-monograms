@@ -4393,15 +4393,15 @@ Bold:POv2*/
     };
   })();
   
-  window.onpageshow = function(evt) {
-    // Removes unload class when returning to page via history
-    if (evt.persisted) {
-      document.body.classList.remove('unloading');
-      document.querySelectorAll('.cart__checkout').forEach(el => {
-        el.classList.remove('btn--loading');
-      });
-    }
-  };
+  // window.onpageshow = function(evt) {
+  //   // Removes unload class when returning to page via history
+  //   if (evt.persisted) {
+  //     document.body.classList.remove('unloading');
+  //     document.querySelectorAll('.cart__checkout').forEach(el => {
+  //       el.classList.remove('btn--loading');
+  //     });
+  //   }
+  // };
   
   theme.predictiveSearch = (function() {
     var currentString = '';

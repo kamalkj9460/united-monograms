@@ -404,9 +404,6 @@ $(function () {
     } else if (MonogramFont.indexOf("228MUMSocialFancy")  !=-1) {//MWL07282023
       $("#monogramimage").html("<img id='monogramImg'   class='line-item-property__field  w3-padding-48 ' style='  object-fit: scale-down'    alt='Monogram here'  src='//cdn.shopify.com/s/files/1/0635/8561/files/228MUMSocialFancy.png?v=1690556891'    />");                                              
 
-    } else if (MonogramFont.indexOf("101MBats")  !=-1) {//MWL09012023
-      $("#monogramimage").html("<img id='monogramImg'   class='line-item-property__field  w3-padding-48 ' style='  object-fit: scale-down'    alt='Monogram here'  src='//cdn.shopify.com/s/files/1/0635/8561/files/101MBats.png?v=1693506073'    />");                                              
-
     } else {
       //alert(MonogramFont);
       $("#monogramimage").html("<img id='monogramImg'   class='line-item-property__field    w3-padding-48 ' style='  object-fit: fill'    alt='Monogram here'  src='//cdn.shopify.com/s/files/1/0054/6819/2886/files/ABC_Black.png?v=1596808745'    />");
@@ -919,10 +916,6 @@ $(function () {
         logoColor = "&Logocolors=" + threadcolor;
         mono_server = "stitchdynamics5";
 
-      } else if (MonogramFont.indexOf("101MBats") != -1) {  //MWL08032022
-        logoColor = "&Logocolors=a000000";
-        mono_server = "stitchdynamics5";
-
       } else {
         logoColor = "";
         mono_server = "stitchdynamics5";
@@ -990,10 +983,6 @@ $(function () {
         mono_server = "stitchdynamics5"; 
         
       } else if (MonogramFont.indexOf("228MUMSocial") != -1) {  //MWL07282023
-        Color1 = threadcolor;
-        mono_server = "stitchdynamics5"; 
-        
-      } else if (MonogramFont.indexOf("101MBats") != -1) {  //MWL07282023
         Color1 = threadcolor;
         mono_server = "stitchdynamics5"; 
         

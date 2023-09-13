@@ -1,7 +1,7 @@
 //-----------------------------------
 //EMB
 //-----------------------------------
-$(function () {
+setTimeout(function(){
 
   //Start variables needed:
   var debug;

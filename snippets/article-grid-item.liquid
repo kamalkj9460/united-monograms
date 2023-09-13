@@ -13,8 +13,10 @@
               <div
                 class="grid__image-ratio grid__image-ratio--{{ image_size }}">
                 {% assign img_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
-                <img class="lazyload"
-                    data-src="{{ img_url }}"
+                <img class="lazyloaded"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-class="LazyLoad"
+                    data-src="{{ article.image | img_url: '1080x' }}"
+                  data-mob-src="{{ article.image | img_url: '540x' }}"
                     data-widths="[360, 540, 720, 900, 1080]"
                     data-aspectratio="{{ article.image.aspect_ratio }}"
                     data-sizes="auto"
@@ -27,8 +29,10 @@
           {%- else -%}
             <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: article.image.aspect_ratio }}%;">
               {%- assign img_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-              <img class="lazyload"
-                  data-src="{{ img_url }}"
+              <img class="lazyloaded"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-class="LazyLoad"
+                  data-src="{{ article.image | img_url: '1080x' }}"
+                  data-mob-src="{{ article.image | img_url: '540x' }}"
                   data-widths="[180, 360, 540, 720, 900, 1080]"
                   data-aspectratio="{{ article.image.aspect_ratio }}"
                   data-sizes="auto"

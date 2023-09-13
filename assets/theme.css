@@ -30,8 +30,8 @@
 
   --colorNav:#ffffff;
   --colorNavText:#0f0f0f;
-  --colorAnnouncement:#365d8e;
-  --colorAnnouncementText:#ffd0e2;
+  --colorAnnouncement:#ec6e20;
+  --colorAnnouncementText:#ffffff;
 
   --colorHeroText:#ffffff;
 
@@ -2628,14 +2628,14 @@ input[type=image]{
 
 select{
   background-position:100%;
-  background-image:url(//cdn.shopify.com/s/files/1/0635/8561/t/177/assets/ico-select.svg);
+  background-image:url(//cdn.shopify.com/s/files/1/0635/8561/t/181/assets/ico-select.svg);
   background-repeat:no-repeat;
   background-position:right 10px center;
   background-size:11px
 }
 
 .is-light select{
-    background-image:url(//cdn.shopify.com/s/files/1/0635/8561/t/177/assets/ico-select-white.svg)
+    background-image:url(//cdn.shopify.com/s/files/1/0635/8561/t/181/assets/ico-select-white.svg)
 }
 
 .faux-select .icon{
@@ -3886,7 +3886,7 @@ form+.footer__social{
     }
 
 .site-footer select{
-    background-image:url(//cdn.shopify.com/s/files/1/0635/8561/t/177/assets/ico-select-footer.svg);
+    background-image:url(//cdn.shopify.com/s/files/1/0635/8561/t/181/assets/ico-select-footer.svg);
   }
 
 [data-center-text=true] .payment-icons{
@@ -9107,9 +9107,9 @@ html[dir=rtl] .background-media-text__text{
   font-size:calc(var(--typeBaseSize)*0.75);
   position:relative;
   text-align:center;
-  background-color:#365d8e;
+  background-color:#ec6e20;
   background-color:var(--colorAnnouncement);
-  color:#ffd0e2;
+  color:#ffffff;
   color:var(--colorAnnouncementText);
   padding:10px 0;
   border-bottom-color:#e8e8e1;
@@ -9132,12 +9132,12 @@ html[dir=rtl] .background-media-text__text{
 
 .announcement-link{
   display:block;
-  color:#ffd0e2;
+  color:#ffffff;
   color:var(--colorAnnouncementText)
 }
 
 .announcement-link:active,.announcement-link:hover{
-    color:#ffd0e2;
+    color:#ffffff;
     color:var(--colorAnnouncementText);
   }
 

@@ -17,9 +17,10 @@
             <div class="parallax-image">
         {%- endif -%}
 
-          <img class="collection-hero__image image-fit lazyload"
-            src=""
-            data-src="{{ img_url }}"
+          <img class="collection-hero__image image-fit lazyloaded"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-class="LazyLoad"
+            data-src="{{ collection.image | img_url: '1800x' }}"
+            data-mob-src="{{ collection.image | img_url: '720x' }}"
             data-aspectratio="{{ collection.image.aspect_ratio }}"
             data-widths="[720, 900, 1080, 1800, 2400]"
             data-sizes="auto"
